@@ -134,24 +134,24 @@ const plugins = [
     }),
     /** Uncomment this plugin, and update the "logo" key
         to generate properly-sized favicons from a source, hi-res file. */
-    // new FaviconsPlugin({
-    //     logo: "./aperture.png",
-    //     prefix: 'icons/',
-    //     emitStates: false,
-    //     inject: false,
-    //     icons: {
-    //         android: false,
-    //         appleIcon: false,
-    //         appleStartup: false,
-    //         coast: false,
-    //         favicons: true,
-    //         firefox: true,
-    //         opengraph: false,
-    //         twitter: false,
-    //         yandex: false,
-    //         windows: false
-    //     }
-    // }),
+    new FaviconsPlugin({
+        logo: "./images/favicon.png",
+        prefix: 'images/',
+        emitStates: false,
+        inject: false,
+        icons: {
+            android: false,
+            appleIcon: true,
+            appleStartup: false,
+            coast: false,
+            favicons: true,
+            firefox: true,
+            opengraph: false,
+            twitter: false,
+            yandex: false,
+            windows: false
+        }
+    }),
     /** Uncomment this to minify code output */
     //new MinifyPlugin({}, {})
 ];

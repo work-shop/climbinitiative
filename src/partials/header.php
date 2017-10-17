@@ -14,10 +14,10 @@
 		?>
 	</title>
 
-	<link rel="icon" type="image/png" sizes="16x16" href="/public/images/favicon-16x16.png">
-	<link rel="icon" type="image/png" sizes="32x32" href="/public/images/favicon-32x32.png">
-	<link rel="icon" type="image/png" sizes="96x96" href="/public/images/favicon-96x96.png">
-	<link rel="apple-touch-icon" href="/public/images/apple-icon.png">	
+	<link rel="icon" type="image/png" sizes="16x16" href="<?php bloginfo('template_directory'); ?>/images/favicon-16x16.png">
+	<link rel="icon" type="image/png" sizes="32x32" href="<?php bloginfo('template_directory'); ?>/images/favicon-32x32.png">
+	<link rel="icon" type="image/png" sizes="96x96" href="<?php bloginfo('template_directory'); ?>/images/favicon-96x96.png">
+	<link rel="apple-touch-icon" href="<?php bloginfo('template_directory'); ?>/images/apple-icon.png">	
 
 	<meta name="description" content="<?php bloginfo('description'); ?>">
 	<meta name="author" content="Work-Shop">
