@@ -22,6 +22,7 @@
 
             add_action("init", array($this, "remove_comment_support"));
             add_action("init", array($this, "register_image_sizing"));
+            add_action("init", array($this, "register_post_types"));
             add_action("acf/init", array($this, "add_options_pages"));
             add_action("admin_menu", array($this, "remove_menu_items"));
             add_action("admin_init", array($this, "admin_setup"));
@@ -46,12 +47,82 @@
         }
 
         /**
+         * Registers custom post types for the site
+         */
+        public function register_post_types() {
+            if ( function_exists( "register_post_type" ) ) {
+                register_post_type(
+                    "research",
+                    array(
+                        "label" => "Research",
+                        "description" => "Research represents ongoing and completed research results that CLIMB is developing.",
+                        "public" => true,
+                        "hierarchical" => false,
+                        "exclude_from_search" => false,
+                        "publicly_queryable" => true,
+                        "show_ui" => true,
+                        "show_in_menu" => true,
+                        "show_in_nav_menus" => true,
+                        "show_in_rest" => true,
+                        "menu_position" => null,
+                        "supports" => array(
+                            "title", "editor", "revisions", "excerpt"
+                        ),
+                        "has_archive" => "research"
+                    )
+                );
+
+                register_post_type(
+                    "team",
+                    array(
+                        "label" => "Team",
+                        "description" => "Principle Investigators, Researchers, Staff, Research Fellows, Funding, and Support for CLIMB.",
+                        "public" => false,
+                        "hierarchical" => false,
+                        "exclude_from_search" => false,
+                        "publicly_queryable" => true,
+                        "show_ui" => true,
+                        "show_in_menu" => true,
+                        "show_in_nav_menus" => true,
+                        "show_in_rest" => true,
+                        "menu_position" => null,
+                        "supports" => array(
+                            "title"
+                        ),
+                        "has_archive" => false
+                    )
+                );
+
+                register_post_type(
+                    "partners",
+                    array(
+                        "label" => "Partners",
+                        "description" => "Research Partners for CLIMB.",
+                        "public" => false,
+                        "hierarchical" => false,
+                        "exclude_from_search" => false,
+                        "publicly_queryable" => true,
+                        "show_ui" => true,
+                        "show_in_menu" => true,
+                        "show_in_nav_menus" => true,
+                        "show_in_rest" => true,
+                        "menu_position" => null,
+                        "supports" => array(
+                            "title"
+                        ),
+                        "has_archive" => false
+                    )
+                );
+            }
+        }
+
+        /**
          * Additional ACF options pages can be registered here.
          */
         public function add_options_pages() {
             if ( function_exists('acf_add_options_page') ) {
                 acf_add_options_page(array(
-                    "page_title" => "Home Page",
+                    "page_title" => "Site",
                     "capability" => "edit_posts",
                     "position" => 5,
                     "icon_url" => "dashicons-admin-home"
