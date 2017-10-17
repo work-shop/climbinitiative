@@ -79,6 +79,7 @@
                         "show_in_nav_menus" => true,
                         "show_in_rest" => true,
                         "menu_position" => null,
+                        "menu_icon" => "dashicons-media-document",
                         "supports" => array(
                             "title", "editor", "revisions", "excerpt"
                         ),
@@ -111,6 +112,7 @@
                         "show_ui" => true,
                         "show_in_menu" => true,
                         "show_in_nav_menus" => true,
+                        "menu_icon" => "dashicons-admin-users",
                         "show_in_rest" => true,
                         "menu_position" => null,
                         "supports" => array(
@@ -145,12 +147,48 @@
                         "show_ui" => true,
                         "show_in_menu" => true,
                         "show_in_nav_menus" => true,
+                        "menu_icon" => "dashicons-welcome-learn-more",
                         "show_in_rest" => true,
                         "menu_position" => null,
                         "supports" => array(
                             "title"
                         ),
                         "has_archive" => 'partners'
+                    )
+                );
+
+                register_post_type(
+                    "conferences",
+                    array(
+                        "labels" => array(
+                            "name" => "Conferences",
+                            "singular_name" => "Conference",
+                            "add_new" => "Add New",
+                            "add_new_item" => "Add New Conference",
+                            "edit_item" => "Edit Conference",
+                            "new_item" => "New Conference",
+                            "view_item" => "View Conference",
+                            "search_items" => "Search Conferences",
+                            "not_found" => "No Conferences Found",
+                            "not_found_in_trash" => "No Conferences Found in the Trash",
+                            "all_items" => "All Conferences",
+                            "archive_title" => "Conferences"
+                        ),
+                        "description" => "CLIMB Conferences",
+                        "public" => true,
+                        "hierarchical" => false,
+                        "exclude_from_search" => false,
+                        "publicly_queryable" => true,
+                        "show_ui" => true,
+                        "show_in_menu" => true,
+                        "show_in_nav_menus" => true,
+                        "show_in_rest" => true,
+                        "menu_position" => null,
+                        "menu_icon" => "dashicons-format-chat",
+                        "supports" => array(
+                            "title"
+                        ),
+                        "has_archive" => 'conferences'
                     )
                 );
             }
