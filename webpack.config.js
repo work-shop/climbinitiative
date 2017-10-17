@@ -152,7 +152,7 @@ const plugins = [
     //         windows: false
     //     }
     // }),
-    /** Uncomment this to */
+    /** Uncomment this to minify code output */
     //new MinifyPlugin({}, {})
 ];
 
@@ -181,12 +181,6 @@ const config = {
         jquery: "jQuery"
     },
     plugins: plugins,
-    resolve: {
-        alias: {
-            "masonry": "masonry-layout",
-            "isotope": "isotope-layout"
-        }
-    }
 };
 
 module.exports = config;
