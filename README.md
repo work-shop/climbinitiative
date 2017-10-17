@@ -19,6 +19,13 @@
 8. When you're done working, run `docker-compose down` to safely close the development environment.
 
 
+## Starting Work
+
+1. You only need to do the above steps once. To start working locally, run `docker-compose up -d` to start your containers, and `npm run watch` to start webpack. When you're done working, kill `npm run watch` with `^C`, and run `docker-compose down` to bring down your containers.
+
+2. To deploy your work to the staging site, run `npm run deploy` from the root directory. This command will place whatever's in your compiled `dist` directory into the appropriate locations on the server.
+
+
 ## Pulling the Remote Database
 
 1. Head to the staging environment, log in, and use WP-Migrate-DB to generate a new, string-replaced database file.
