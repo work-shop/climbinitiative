@@ -17,3 +17,10 @@
 7. run `npm run watch` to start the development environment. The docker container will watch for changes as you make them, and reload the page at `http://localhost:8080`.
 
 8. When you're done working, run `docker-compose down` to safely close the development environment.
+
+
+## Pulling the Remote Database
+
+1. Head to the staging environment, log in, and use WP-Migrate-DB to generate a new, string-replaced database file.
+
+2. Run `./.pull-database.sh <path-to-mysql-export>` from the project directory. This script will import this file into the docker mysql instance you have running locally.
