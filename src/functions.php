@@ -219,7 +219,34 @@
                         "show_in_rest" => true,
                         "show_tag_cloud" => false,
                         "show_in_quick_edit" => true,
-                        "hierarchical" => true
+                        "hierarchical" => false
+                    )
+                );
+
+                register_taxonomy(
+                    "partner_role",
+                    "partners",
+                    array(
+                        "labels" => array(
+                            "name" => "Partner Roles",
+                            "singular_name" => "Partner Role",
+                            "all_items" => "All Partner Roles",
+                            "edit_item" => "Edit Partner Role",
+                            "view_item" => "View Partner Role",
+                            "update_item" => "Update Partner Role",
+                            "add_new_item" => "Add New Partner Role",
+                            "new_item_name" => "New Partner Role Name",
+                            "search_items" => "Search Partner Roles",
+                        ),
+                        "public" => true,
+                        "publicly_queryable" => true,
+                        "show_ui" => true,
+                        "show_in_menu" => true,
+                        "show_in_nav_menus" => true,
+                        "show_in_rest" => true,
+                        "show_tag_cloud" => false,
+                        "show_in_quick_edit" => true,
+                        "hierarchical" => false
                     )
                 );
             }
