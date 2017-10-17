@@ -1,17 +1,17 @@
 {
-  "name": "risd-pre-college",
+  "name": "climbininitiative",
   "version": "1.0.0",
-  "description": "RISD Pre-College Website",
+  "description": "CLIMB Initiative Website",
   "author": "Work-Shop (http://workshop.co)",
   "license": "ISC",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/work-shop/risd-pre-college.git"
+    "url": "git+https://github.com/work-shop/climbinitiative.git"
   },
   "bugs": {
-    "url": "https://github.com/work-shop/risd-pre-college/issues"
+    "url": "https://github.com/work-shop/climbinitiative/issues"
   },
-  "homepage": "https://github.com/work-shop/risd-pre-college#readme",
+  "homepage": "https://github.com/work-shop/climbinitiative#readme",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "watch": "webpack --watch",
