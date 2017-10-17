@@ -12,8 +12,8 @@
 			</div>						
 		</div>
 		<div class="site-credit">
-			<a href="http://workshopri.com" target="_blank">
-				<h4>Site by Work-Shop</h4>
+			<a href="http://workshop.co" target="_blank">
+				<h4>Site by Work-Shop Design Studio</h4>
 			</a>
 		</div>
 	</div>
