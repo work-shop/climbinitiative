@@ -88,21 +88,21 @@
                 );
 
                 register_post_type(
-                    "team",
+                    "people",
                     array(
                         "labels" => array(
-                            "name" => "Team",
-                            "singular_name" => "Team Member",
+                            "name" => "People",
+                            "singular_name" => "Person",
                             "add_new" => "Add New",
-                            "add_new_item" => "Add New Team Member",
-                            "edit_item" => "Edit Team Member",
-                            "new_item" => "New Team Member",
-                            "view_item" => "View Team Member",
-                            "search_items" => "Search Team Members",
-                            "not_found" => "No Team Members Found",
-                            "not_found_in_trash" => "No Team Members Found in the Trash",
-                            "all_items" => "All Team Members",
-                            "archive_title" => "Team Members"
+                            "add_new_item" => "Add New Person",
+                            "edit_item" => "Edit Person",
+                            "new_item" => "New Person",
+                            "view_item" => "View Person",
+                            "search_items" => "Search People",
+                            "not_found" => "No People Found",
+                            "not_found_in_trash" => "No People Found in the Trash",
+                            "all_items" => "All People",
+                            "archive_title" => "Team"
                         ),
                         "description" => "Principle Investigators, Researchers, Staff, Research Fellows, Funding, and Support for CLIMB.",
                         "public" => false,
@@ -197,13 +197,13 @@
         public function register_custom_taxonomies() {
             if ( function_exists( 'register_taxonomy' ) ) {
                 register_taxonomy(
-                    "team_member_role",
-                    "team",
+                    "role",
+                    "people",
                     array(
                         "labels" => array(
-                            "name" => "Team Roles",
-                            "singular_name" => "Team Role",
-                            "all_items" => "All Team Roles",
+                            "name" => "Roles",
+                            "singular_name" => "Role",
+                            "all_items" => "All Roles",
                             "edit_item" => "Edit Role",
                             "view_item" => "View Role",
                             "update_item" => "Update Role",
