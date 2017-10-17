@@ -1,11 +1,11 @@
 "use strict";
 
 module.exports = function( $ ) {
-
+console.log('loading.js');
 	function loadPage(){
 		setTimeout(function(){
 			$('.loading').addClass('loaded');
-		},500);
+		},5000);
 	}
 
 	function setupLoading( selector ) {

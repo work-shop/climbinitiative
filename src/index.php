@@ -1,9 +1,12 @@
-<?php get_template_part('templates/partials', 'header' ); ?>
+<?php 
 
-<div class="container">
-    <div class="col-sm-3"><h1>Hello</h1></div>
-    <div class="col-sm-3"><h1>Hello</h1></div>
-    <div class="col-sm-3"><h1>Hello</h1></div>
-</div>
+get_template_part('partials/header'); 
 
-<?php get_template_part('templates/partials', 'footer' ); ?>
+//a preview of base styles and typography
+get_template_part('partials/initialize'); 
+
+get_template_part('partials/home/home_intro'); 
+
+get_template_part('partials/footer' ); 
+
+?>

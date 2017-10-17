@@ -8,7 +8,6 @@ body{
 
 *{
 	font-family: $font-main;
-	letter-spacing: .02em;	
 }
 
 .serif{
@@ -66,6 +65,7 @@ p{
 
 .bold,strong{
 	font-family: $font-bold;
+	font-weight: bold;
 }
 
 .italic,em{
@@ -134,10 +134,6 @@ p{
 
 .dark{
 	color: $dark;
-}
-
-.yellow-darker{
-	color: $yellow-darker;
 }
 
 
