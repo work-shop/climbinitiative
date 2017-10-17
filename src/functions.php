@@ -22,6 +22,8 @@
 
             add_action("init", array($this, "remove_comment_support"));
             add_action("init", array($this, "register_image_sizing"));
+            add_action("init", array($this, "register_post_types"));
+            add_action("init", array($this, "register_custom_taxonomies"));
             add_action("acf/init", array($this, "add_options_pages"));
             add_action("admin_menu", array($this, "remove_menu_items"));
             add_action("admin_init", array($this, "admin_setup"));
@@ -46,12 +48,217 @@
         }
 
         /**
+         * Registers custom post types for the site
+         */
+        public function register_post_types() {
+            if ( function_exists( "register_post_type" ) ) {
+                register_post_type(
+                    "research",
+                    array(
+                        "labels" => array(
+                            "name" => "Research",
+                            "singular_name" => "Research Result",
+                            "add_new" => "Add New",
+                            "add_new_item" => "Add New Result",
+                            "edit_item" => "Edit Result",
+                            "new_item" => "New Result",
+                            "view_item" => "View Result",
+                            "search_items" => "Search Research",
+                            "not_found" => "No Results Found",
+                            "not_found_in_trash" => "No Results Found in the Trash",
+                            "all_items" => "All Research",
+                            "archive_title" => "Research"
+                        ),
+                        "description" => "Research represents ongoing and completed research results that CLIMB is developing.",
+                        "public" => true,
+                        "hierarchical" => false,
+                        "exclude_from_search" => false,
+                        "publicly_queryable" => true,
+                        "show_ui" => true,
+                        "show_in_menu" => true,
+                        "show_in_nav_menus" => true,
+                        "show_in_rest" => true,
+                        "menu_position" => null,
+                        "menu_icon" => "dashicons-media-document",
+                        "supports" => array(
+                            "title", "editor", "revisions", "excerpt"
+                        ),
+                        "has_archive" => "research"
+                    )
+                );
+
+                register_post_type(
+                    "people",
+                    array(
+                        "labels" => array(
+                            "name" => "People",
+                            "singular_name" => "Person",
+                            "add_new" => "Add New",
+                            "add_new_item" => "Add New Person",
+                            "edit_item" => "Edit Person",
+                            "new_item" => "New Person",
+                            "view_item" => "View Person",
+                            "search_items" => "Search People",
+                            "not_found" => "No People Found",
+                            "not_found_in_trash" => "No People Found in the Trash",
+                            "all_items" => "All People",
+                            "archive_title" => "Team"
+                        ),
+                        "description" => "Principle Investigators, Researchers, Staff, Research Fellows, Funding, and Support for CLIMB.",
+                        "public" => false,
+                        "hierarchical" => false,
+                        "exclude_from_search" => false,
+                        "publicly_queryable" => true,
+                        "show_ui" => true,
+                        "show_in_menu" => true,
+                        "show_in_nav_menus" => true,
+                        "menu_icon" => "dashicons-admin-users",
+                        "show_in_rest" => true,
+                        "menu_position" => null,
+                        "supports" => array(
+                            "title"
+                        ),
+                        "has_archive" => 'team'
+                    )
+                );
+
+                register_post_type(
+                    "partners",
+                    array(
+                        "labels" => array(
+                            "name" => "Partners",
+                            "singular_name" => "Partner",
+                            "add_new" => "Add New",
+                            "add_new_item" => "Add New Partner",
+                            "edit_item" => "Edit Partner",
+                            "new_item" => "New Partner",
+                            "view_item" => "View Partner",
+                            "search_items" => "Search Partners",
+                            "not_found" => "No Partners Found",
+                            "not_found_in_trash" => "No Partners Found in the Trash",
+                            "all_items" => "All Partners",
+                            "archive_title" => "Partners"
+                        ),
+                        "description" => "Research Partners for CLIMB.",
+                        "public" => false,
+                        "hierarchical" => false,
+                        "exclude_from_search" => false,
+                        "publicly_queryable" => true,
+                        "show_ui" => true,
+                        "show_in_menu" => true,
+                        "show_in_nav_menus" => true,
+                        "menu_icon" => "dashicons-welcome-learn-more",
+                        "show_in_rest" => true,
+                        "menu_position" => null,
+                        "supports" => array(
+                            "title"
+                        ),
+                        "has_archive" => 'partners'
+                    )
+                );
+
+                register_post_type(
+                    "conferences",
+                    array(
+                        "labels" => array(
+                            "name" => "Conferences",
+                            "singular_name" => "Conference",
+                            "add_new" => "Add New",
+                            "add_new_item" => "Add New Conference",
+                            "edit_item" => "Edit Conference",
+                            "new_item" => "New Conference",
+                            "view_item" => "View Conference",
+                            "search_items" => "Search Conferences",
+                            "not_found" => "No Conferences Found",
+                            "not_found_in_trash" => "No Conferences Found in the Trash",
+                            "all_items" => "All Conferences",
+                            "archive_title" => "Conferences"
+                        ),
+                        "description" => "CLIMB Conferences",
+                        "public" => true,
+                        "hierarchical" => false,
+                        "exclude_from_search" => false,
+                        "publicly_queryable" => true,
+                        "show_ui" => true,
+                        "show_in_menu" => true,
+                        "show_in_nav_menus" => true,
+                        "show_in_rest" => true,
+                        "menu_position" => null,
+                        "menu_icon" => "dashicons-format-chat",
+                        "supports" => array(
+                            "title"
+                        ),
+                        "has_archive" => 'conferences'
+                    )
+                );
+            }
+        }
+
+        public function register_custom_taxonomies() {
+            if ( function_exists( 'register_taxonomy' ) ) {
+                register_taxonomy(
+                    "role",
+                    "people",
+                    array(
+                        "labels" => array(
+                            "name" => "Roles",
+                            "singular_name" => "Role",
+                            "all_items" => "All Roles",
+                            "edit_item" => "Edit Role",
+                            "view_item" => "View Role",
+                            "update_item" => "Update Role",
+                            "add_new_item" => "Add New Role",
+                            "new_item_name" => "New Role Name",
+                            "search_items" => "Search Roles",
+                        ),
+                        "public" => true,
+                        "publicly_queryable" => true,
+                        "show_ui" => true,
+                        "show_in_menu" => true,
+                        "show_in_nav_menus" => true,
+                        "show_in_rest" => true,
+                        "show_tag_cloud" => false,
+                        "show_in_quick_edit" => true,
+                        "hierarchical" => false
+                    )
+                );
+
+                register_taxonomy(
+                    "partner_role",
+                    "partners",
+                    array(
+                        "labels" => array(
+                            "name" => "Partner Roles",
+                            "singular_name" => "Partner Role",
+                            "all_items" => "All Partner Roles",
+                            "edit_item" => "Edit Partner Role",
+                            "view_item" => "View Partner Role",
+                            "update_item" => "Update Partner Role",
+                            "add_new_item" => "Add New Partner Role",
+                            "new_item_name" => "New Partner Role Name",
+                            "search_items" => "Search Partner Roles",
+                        ),
+                        "public" => true,
+                        "publicly_queryable" => true,
+                        "show_ui" => true,
+                        "show_in_menu" => true,
+                        "show_in_nav_menus" => true,
+                        "show_in_rest" => true,
+                        "show_tag_cloud" => false,
+                        "show_in_quick_edit" => true,
+                        "hierarchical" => false
+                    )
+                );
+            }
+        }
+
+        /**
          * Additional ACF options pages can be registered here.
          */
         public function add_options_pages() {
             if ( function_exists('acf_add_options_page') ) {
                 acf_add_options_page(array(
-                    "page_title" => "Home Page",
+                    "page_title" => "Site",
                     "capability" => "edit_posts",
                     "position" => 5,
                     "icon_url" => "dashicons-admin-home"
