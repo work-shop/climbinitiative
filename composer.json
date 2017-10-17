@@ -49,7 +49,7 @@
                     "composer/installers": "^1.0"
                 }
             }
-        }
+        },
         {
             "type": "package",
             "package": {
@@ -74,15 +74,15 @@
         "wpackagist-plugin/acf-to-rest-api": "*",
         "wpackagist-plugin/acf-gravityforms-add-on": "*",
         "wpackagist-plugin/ajax-thumbnail-rebuild": "*",
+        "wpackagist-plugin/better-wp-security": "*",
         "wp-premium/gravityforms": "*",
         "wp-premium/gravityformsmailchimp": "*",
-        "advanced-custom-fields/advanced-custom-fields-pro": "*",
-        "ithemes/better-wp-security": "*"
+        "advanced-custom-fields/advanced-custom-fields-pro": "*"
     },
     "extra": {
         "installer-paths": {
             "./dist/wp-content/plugins/{$name}": ["type:wordpress-plugin"],
-            "./dist/wp-content/plugins/{$name}": ["type:wordpress-mu-plugin"]
+            "./dist/wp-content/mu-plugins/{$name}": ["type:wordpress-mu-plugin"]
         }
     }
 }
