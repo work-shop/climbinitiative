@@ -23,6 +23,7 @@
             add_action("init", array($this, "remove_comment_support"));
             add_action("init", array($this, "register_image_sizing"));
             add_action("init", array($this, "register_post_types"));
+            add_action("init", array($this, "register_custom_taxonomies"));
             add_action("acf/init", array($this, "add_options_pages"));
             add_action("admin_menu", array($this, "remove_menu_items"));
             add_action("admin_init", array($this, "admin_setup"));
@@ -54,7 +55,20 @@
                 register_post_type(
                     "research",
                     array(
-                        "label" => "Research",
+                        "labels" => array(
+                            "name" => "Research",
+                            "singular_name" => "Research Result",
+                            "add_new" => "Add New",
+                            "add_new_item" => "Add New Result",
+                            "edit_item" => "Edit Result",
+                            "new_item" => "New Result",
+                            "view_item" => "View Result",
+                            "search_items" => "Search Research",
+                            "not_found" => "No Results Found",
+                            "not_found_in_trash" => "No Results Found in the Trash",
+                            "all_items" => "All Research",
+                            "archive_title" => "Research"
+                        ),
                         "description" => "Research represents ongoing and completed research results that CLIMB is developing.",
                         "public" => true,
                         "hierarchical" => false,
@@ -75,7 +89,20 @@
                 register_post_type(
                     "team",
                     array(
-                        "label" => "Team",
+                        "labels" => array(
+                            "name" => "Team",
+                            "singular_name" => "Team Member",
+                            "add_new" => "Add New",
+                            "add_new_item" => "Add New Team Member",
+                            "edit_item" => "Edit Team Member",
+                            "new_item" => "New Team Member",
+                            "view_item" => "View Team Member",
+                            "search_items" => "Search Team Members",
+                            "not_found" => "No Team Members Found",
+                            "not_found_in_trash" => "No Team Members Found in the Trash",
+                            "all_items" => "All Team Members",
+                            "archive_title" => "Team Members"
+                        ),
                         "description" => "Principle Investigators, Researchers, Staff, Research Fellows, Funding, and Support for CLIMB.",
                         "public" => false,
                         "hierarchical" => false,
@@ -89,14 +116,27 @@
                         "supports" => array(
                             "title"
                         ),
-                        "has_archive" => false
+                        "has_archive" => 'team'
                     )
                 );
 
                 register_post_type(
                     "partners",
                     array(
-                        "label" => "Partners",
+                        "labels" => array(
+                            "name" => "Partners",
+                            "singular_name" => "Partner",
+                            "add_new" => "Add New",
+                            "add_new_item" => "Add New Partner",
+                            "edit_item" => "Edit Partner",
+                            "new_item" => "New Partner",
+                            "view_item" => "View Partner",
+                            "search_items" => "Search Partners",
+                            "not_found" => "No Partners Found",
+                            "not_found_in_trash" => "No Partners Found in the Trash",
+                            "all_items" => "All Partners",
+                            "archive_title" => "Partners"
+                        ),
                         "description" => "Research Partners for CLIMB.",
                         "public" => false,
                         "hierarchical" => false,
@@ -110,7 +150,38 @@
                         "supports" => array(
                             "title"
                         ),
-                        "has_archive" => false
+                        "has_archive" => 'partners'
+                    )
+                );
+            }
+        }
+
+        public function register_custom_taxonomies() {
+            if ( function_exists( 'register_taxonomy' ) ) {
+                register_taxonomy(
+                    "team_member_role",
+                    "team",
+                    array(
+                        "labels" => array(
+                            "name" => "Team Roles",
+                            "singular_name" => "Team Role",
+                            "all_items" => "All Team Roles",
+                            "edit_item" => "Edit Role",
+                            "view_item" => "View Role",
+                            "update_item" => "Update Role",
+                            "add_new_item" => "Add New Role",
+                            "new_item_name" => "New Role Name",
+                            "search_items" => "Search Roles",
+                        ),
+                        "public" => true,
+                        "publicly_queryable" => true,
+                        "show_ui" => true,
+                        "show_in_menu" => true,
+                        "show_in_nav_menus" => true,
+                        "show_in_rest" => true,
+                        "show_tag_cloud" => false,
+                        "show_in_quick_edit" => true,
+                        "hierarchical" => true
                     )
                 );
             }
