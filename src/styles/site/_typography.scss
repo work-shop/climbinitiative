@@ -1,7 +1,7 @@
 @font-face {
 	font-family: 'modern_pictograms_proregular';
 	src: url('../../fonts/modernpictogramspro_234.eot');
-	src: url('../../fonts/modernpictogramspro_234?#iefix') format('embedded-opentype'),
+	src: url('../../fonts/modernpictogramspro_234.eot?#iefix') format('embedded-opentype'),
 		url('../../fonts/modernpictogramspro_234.woff') format('woff'),
 		url('../../fonts/modernpictogramspro_234.ttf') format('truetype');
 	font-weight: normal;
@@ -68,7 +68,7 @@ h6,.h6{
 }
 
 p{
-	@include text-size($text-regular);	
+	@include text-size($text-regular);
 	margin-top: 0;
 }
 
@@ -157,11 +157,10 @@ p{
 		font-size: 24px;
 		line-height: 100%;
 		vertical-align: middle;
-		position: relative;	
+		position: relative;
 	}
 
 	&.large:before{
 		font-size: 72px;
 	}
 }
-
