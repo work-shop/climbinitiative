@@ -1,4 +1,4 @@
-# RISD Pre-College Wordpress Development
+# CLIMB Initiative Wordpress Development
 
 ## Getting Started
 
