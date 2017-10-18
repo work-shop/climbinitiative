@@ -9,7 +9,7 @@
             "package": {
                 "name": "advanced-custom-fields/advanced-custom-fields-pro",
                 "version": "5.5.14",
-                "type": "wordpress-plugin",
+                "type": "wordpress-mu-plugin",
                 "dist": {
                     "type": "zip",
                     "url": "https://connect.advancedcustomfields.com/index.php?p=pro&a=download"
@@ -23,12 +23,72 @@
         {
             "type": "package",
             "package": {
+                "name": "janis-elsts/admin-menu-editor-pro",
+                "version": "5.5.14",
+                "type": "wordpress-mu-plugin",
+                "dist": {
+                    "type": "zip",
+                    "url": "http://adminmenueditor.com/?get_product=admin-menu-editor-pro&license_key=J27YEXYVOJ8WW09GM2N7Y565QVFZWLR3"
+                },
+                "require": {
+                    "composer/installers": "^1.0"
+                }
+            }
+        },
+        {
+            "type": "package",
+            "package": {
                 "name": "wp-premium/gravityforms",
                 "version": "2.2.5",
-                "type": "wordpress-plugin",
+                "type": "wordpress-mu-plugin",
                 "dist": {
                     "type": "zip",
                     "url": "https://github.com/wp-premium/gravityforms/archive/master.zip"
+                },
+                "require": {
+                    "composer/installers": "^1.0"
+                }
+            }
+        },
+        {
+            "type": "package",
+            "package": {
+                "name": "wp-premium/gravityformsmailchimp",
+                "version": "4.2.0",
+                "type": "wordpress-plugin",
+                "dist": {
+                    "type": "zip",
+                    "url": "https://github.com/wp-premium/gravityformsmailchimp/archive/master.zip"
+                },
+                "require": {
+                    "composer/installers": "^1.0"
+                }
+            }
+        },
+        {
+            "type": "package",
+            "package": {
+                "name": "soffly/wp-all-import-pro",
+                "version": "4.3.2",
+                "type": "wordpress-plugin",
+                "dist": {
+                    "type": "zip",
+                    "url": "https://www.wpallimport.com/index.php?download_key=77c706a3e15b3ca3b02925d8480f9bcc&email=mail%40gregnemes.com&file=20&price_id=0&download_id=1748&expire=MTUxMDA2ODQ2Nw%3D%3D"
+                },
+                "require": {
+                    "composer/installers": "^1.0"
+                }
+            }
+        },
+        {
+            "type": "package",
+            "package": {
+                "name": "soffly/wpai-acf-add-on",
+                "version": "3.1.1",
+                "type": "wordpress-plugin",
+                "dist": {
+                    "type": "zip",
+                    "url": "https://www.wpallimport.com/index.php?download_key=77c706a3e15b3ca3b02925d8480f9bcc&email=mail%40gregnemes.com&file=14&price_id=0&download_id=1520&expire=MTUxMDA2ODQ2Nw%3D%3D"
                 },
                 "require": {
                     "composer/installers": "^1.0"
@@ -42,13 +102,19 @@
         "wpackagist-plugin/post-types-order": "*",
         "wpackagist-plugin/post-duplicator": "*",
         "wpackagist-plugin/acf-to-rest-api": "*",
+        "wpackagist-plugin/acf-gravityforms-add-on": "*",
         "wpackagist-plugin/ajax-thumbnail-rebuild": "*",
+        "wpackagist-plugin/better-wp-security": "*",
         "wp-premium/gravityforms": "*",
+        "wp-premium/gravityformsmailchimp": "*",
+        "soffly/wp-all-import-pro": "*",
+        "soffly/wpai-acf-add-on": "*",
         "advanced-custom-fields/advanced-custom-fields-pro": "*"
     },
     "extra": {
         "installer-paths": {
-            "./dist/wp-content/plugins/{$name}": ["type:wordpress-plugin"]
+            "./dist/wp-content/plugins/{$name}": ["type:wordpress-plugin"],
+            "./dist/wp-content/mu-plugins/{$name}": ["type:wordpress-mu-plugin"]
         }
     }
 }
