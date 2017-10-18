@@ -1,4 +1,4 @@
-const path = require("path");
+const path = require('path');
 const CleanWebpackPlugin = require('clean-webpack-plugin');
 const CopyWebpackPlugin = require('copy-webpack-plugin');
 const ExtractTextPlugin = require('extract-text-webpack-plugin');
@@ -8,15 +8,15 @@ const MinifyPlugin = require('babel-minify-webpack-plugin');
 const webpack = require('webpack');
 
 const paths = {
-    src: "./src",
-    dest: "./dist/wp-content/themes/custom",
-    public: "/wp-content/themes/custom"
+    src: './src',
+    dest: './dist/wp-content/themes/custom',
+    public: '/wp-content/themes/custom'
 };
 
 const script = {
     test: /\.js$/i,
     exclude: /node_modules/,
-    use: "babel-loader"
+    use: 'babel-loader'
 };
 
 const libStyle = {
@@ -26,9 +26,9 @@ const libStyle = {
         /styles\/lib/
     ],
     use: [
-        "style-loader",
+        'style-loader',
         {
-            loader: "css-loader",
+            loader: 'css-loader',
             options: {
                 importLoaders: 1
             }
@@ -44,23 +44,23 @@ const style = {
     ],
     use: ExtractTextPlugin.extract({
         fallback: {
-            loader: "style-loader",
+            loader: 'style-loader',
             options: {
                 sourceMap: true,
             }
         },
         use: [
             {
-                loader: "css-loader",
+                loader: 'css-loader',
                 options: {
                     sourceMap: true,
                     importLoaders: 1,
                     minimize: true
                 }
             },
-            { loader: "resolve-url-loader" },
+            { loader: 'resolve-url-loader' },
             {
-                loader: "postcss-loader",
+                loader: 'postcss-loader',
                 options: {
                     plugins: function() {
                         return [
@@ -72,10 +72,10 @@ const style = {
                 }
             },
             {
-                loader: "sass-loader",
+                loader: 'sass-loader',
                 options: {
                     sourceMap: true,
-                    includePaths: [ require("bourbon").includePaths, require("bourbon-neat").includePaths, path.join(__dirname,'node_modules','slick-carousel', 'slick') ]
+                    includePaths: [ require('bourbon').includePaths, require('bourbon-neat').includePaths, path.join(__dirname,'node_modules','slick-carousel', 'slick') ]
                 }
             }
         ]
@@ -86,9 +86,9 @@ const font = {
     test: /\.(woff2?|otf|ttf|eot)$/i,
     exclude: /node_modules/,
     use: {
-        loader: "file-loader",
+        loader: 'file-loader',
         options: {
-            name: "fonts/[hash].[ext]"
+            name: 'fonts/[hash].[ext]'
         }
     }
 };
@@ -97,14 +97,14 @@ const image = {
     test: /\.(jpe?g|png|gif|svg)$/i,
     use: [
         {
-            loader: "file-loader",
+            loader:'file-loader',
             options: {
-                hash: "sha512",
-                digest: "hex",
-                name: "images/[hash].[ext]"
+                hash: 'sha512',
+                digest: 'hex',
+                name: 'images/[hash].[ext]'
             }
         },
-        { loader: "image-webpack-loader" }
+        { loader: 'image-webpack-loader' }
     ]
 };
 
@@ -112,21 +112,21 @@ const plugins = [
     new CleanWebpackPlugin( paths.dest ),
     new CopyWebpackPlugin([
         {
-            from: "style.css"
+            from: 'style.css'
         },
         {
-            from: "**/*.php"
+            from: '**/*.php'
         }
     ]),
-    new ExtractTextPlugin("[name]"),
+    new ExtractTextPlugin('[name]'),
     new webpack.ProvidePlugin({
-        $: "jquery",
-        jQuery: "jquery",
-        "window.jQuery": "jquery",
+        $: 'jquery',
+        jQuery: 'jquery',
+        'window.jQuery': 'jquery',
         Popper: ['popper.js', 'default'],
     }),
     new BrowserSyncPlugin({
-        proxy: "localhost:8080",
+        proxy: 'localhost:8080',
         port: 3000,
         ui: {
             port: 3001
@@ -135,7 +135,7 @@ const plugins = [
     /** Uncomment this plugin, and update the "logo" key
         to generate properly-sized favicons from a source, hi-res file. */
     new FaviconsPlugin({
-        logo: "./images/favicon.png",
+        logo: './images/favicon.png',
         prefix: 'images/',
         emitStates: false,
         inject: false,
@@ -158,12 +158,12 @@ const plugins = [
 
 const config = {
     entry: {
-        "scripts/bundle.js": "./scripts/main.js",
-        "styles/bundle.css": "./styles/main.scss"
+        'scripts/bundle.js': './scripts/main.js',
+        'styles/bundle.css': './styles/main.scss'
     },
     output: {
         path: path.resolve(__dirname, paths.dest),
-        filename: "[name]",
+        filename:'[name]',
         publicPath: `${paths.public}/`
     },
     module: {
@@ -175,10 +175,10 @@ const config = {
             image
         ]
     },
-    devtool: "source-map",
+    devtool: 'source-map',
     context: path.resolve(__dirname, paths.src),
     externals: {
-        jquery: "jQuery"
+        jquery: 'jQuery'
     },
     plugins: plugins,
 };
