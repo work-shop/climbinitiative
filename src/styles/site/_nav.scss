@@ -8,7 +8,6 @@ $text-nav: (
 	);
 
 #nav{
-	position: fixed;
 	top: 0;
 	left: 0;
 	width: 100%;
@@ -16,6 +15,10 @@ $text-nav: (
 	background: $ultra-light;
 	z-index: 7;
 	padding-top: 15px;
+
+	&.fixed{
+		position: fixed;
+	}
 
 	@media screen and (max-width: $sm) {
 		height: $nav-height-mobile;

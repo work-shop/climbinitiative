@@ -2,13 +2,10 @@
 
 body{
 	background-color: $body-background-color;
-	transition: none !important;
 	padding-top: $nav-height;	
 
 	@media screen and (max-width: $sm) {
-		&.after{
-			padding-top: $nav-height-mobile;
-		}		
+		padding-top: $nav-height-mobile;
 	}
 }
 

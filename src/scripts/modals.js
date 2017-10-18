@@ -1,92 +1,72 @@
-"use strict";
+'use strict';
 
-module.exports = function($) {
+var modalProperties = {};
 
-	function closeModal(){
+function modals( config ) {
+	console.log('modals.js loaded');
 
-		if($('body').hasClass('modal-on')){
-			$('.modal').removeClass('on').addClass('off');
-			$('body').removeClass('modal-on').addClass('modal-off');
-		}
+	modalProperties.modalClass = config.modalClass || 'modal';
+	modalProperties.modalToggleClass = config.modalToggleClass || 'modal-toggle';
+	modalProperties.modalCloseClass = config.modalCloseClass || 'modal-close';
+	modalProperties.modalOnBodyClass = config.modalOnBodyClass || 'modal-on';
+	modalProperties.modalOffBodyClass = config.modalOffBodyClass || 'modal-off';
 
-	}
+	$( document ).ready( function() {
 
-	function modalToggle(_target, swap){
-
-		var modalTarget = '#' + _target;
-
-		if(swap){
-			$('.modal').removeClass('on');
-			$(modalTarget).removeClass('off').addClass('on');
-		}
-		else{
-			if($('body').hasClass('modal-off')){
-				$(modalTarget).removeClass('off').addClass('on');
-				$('body').removeClass('modal-off').addClass('modal-on');
-			}	
-		}
-
-	}
-
-
-	function urlCheck(){
-
-		// var hash = window.location.hash;
-
-		// if( hash.includes('#people=') ){
-		// 	var person = hash.split('=');
-		// 	//console.log(person[1]);
-		// 	$('html,body').animate({
-		// 		scrollTop: $('#people').offset().top - 75
-		// 	},0);
-		// 	modalToggle('modal-person-' + person[1]);
-		// }
-		
-	}
-
-
-
-	function setupModals() {
-
-		$( document ).ready( function() {
-
-			urlCheck();
-
-			$(".modal-close").click(function(e){
-				e.preventDefault();
-				closeModal();	
-			});
-
-			$(".blanket").click(function(e){
-				e.preventDefault();
-				closeModal();	
-			});			
-
-			$(".modal-toggle").click(function(e){
-
-				if( $(this).hasClass('modal-person-toggle') === false ){
-					e.preventDefault();
-				}
-
-				var target = $(this).data('modal-target');
-				modalToggle(target, false);	
-			});
-
-			$(".modal-swap").click(function(e){
-				e.preventDefault();
-				var target = $(this).data('modal-target');
-				modalToggle(target,true);	
-			});
-
+		$( '.' + modalProperties.modalCloseClass ).click(function(e){
+			e.preventDefault();
+			closeModal();	
 		});
 
+		$('.blanket').click(function(e){
+			e.preventDefault();
+			closeModal();	
+		});			
+
+		$( '.' + modalProperties.modalToggleClass ).click(function(e){
+			e.preventDefault();
+			var target = $(this).data('modal-target');
+			modalToggle(target, false);	
+		});
+
+		$('.modal-swap').click(function(e){
+			e.preventDefault();
+			var target = $(this).data('modal-target');
+			modalToggle(target,true);	
+		});
+
+	});
+
+}
+
+
+function modalToggle(_target, swap){
+
+	var modalTarget = '#' + _target;
+
+	if(swap){
+		$('.' + modalProperties.modalClass).removeClass('on');
+		$('.' + modalTarget).removeClass('off').addClass('on');
+	}
+	else{
+		console.log('else');
+		if( $('body').hasClass( modalProperties.modalOffBodyClass ) ){
+			$(modalTarget).removeClass('off').addClass('on');
+			$('body').removeClass( modalProperties.modalOffBodyClass ).addClass( modalProperties.modalOnBodyClass );
+		}	
 	}
 
-	//return an object with methods that correspond to above defined functions
-	return {
-		closeModal: closeModal,
-		modalToggle: modalToggle,
-		setupModals: setupModals
-	};
+}
 
-};
+
+function closeModal(){
+
+	if($('body').hasClass( modalProperties.modalOnBodyClass )){
+		$( '.' + modalProperties.modalClass ).removeClass('on').addClass('off');
+		$('body').removeClass( modalProperties.modalOnBodyClass ).addClass( modalProperties.modalOffBodyClass );
+	}
+
+}
+
+
+export { modals };

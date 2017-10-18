@@ -1,3 +1,14 @@
+@font-face {
+	font-family: 'modern_pictograms_proregular';
+	src: url('../../fonts/modernpictogramspro_234.eot');
+	src: url('../../fonts/modernpictogramspro_234?#iefix') format('embedded-opentype'),
+		url('../../fonts/modernpictogramspro_234.woff') format('woff'),
+		url('../../fonts/modernpictogramspro_234.ttf') format('truetype');
+	font-weight: normal;
+	font-style: normal;
+}
+
+
 
 body{
 	font-family: $font-main;

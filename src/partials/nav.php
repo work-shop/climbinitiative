@@ -1,5 +1,5 @@
 
-<nav id="nav">
+<nav id="nav" class="fixed">
 	<div class="container-fluid">
 		<div class="row">
 			<div class="logo col-sm-3 col-xs-6">

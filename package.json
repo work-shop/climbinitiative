@@ -58,5 +58,8 @@
     "tachyons-skins-pseudo": "^1.0.4",
     "url-loader": "^0.6.2",
     "webpack": "^3.4.1"
+  },
+  "dependencies": {
+    "slick-carousel": "^1.8.1"
   }
 }

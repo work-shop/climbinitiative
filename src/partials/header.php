@@ -26,7 +26,7 @@
 	<?php wp_head(); ?>
 
 </head>
-<body class="<?php body_class('before loading'); ?>">
+<body <?php body_class('loading before-scroll modal-off menu-closed'); ?>>
 
 	<?php get_template_part('partials/nav'); ?>
 

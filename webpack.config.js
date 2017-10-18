@@ -75,7 +75,7 @@ const style = {
                 loader: "sass-loader",
                 options: {
                     sourceMap: true,
-                    includePaths: [ require("bourbon").includePaths, require("bourbon-neat").includePaths ]
+                    includePaths: [ require("bourbon").includePaths, require("bourbon-neat").includePaths, path.join(__dirname,'node_modules','slick-carousel', 'slick') ]
                 }
             }
         ]

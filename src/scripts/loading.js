@@ -1,23 +1,17 @@
-"use strict";
+'use strict';
 
-module.exports = function( $ ) {
-console.log('loading.js');
-	function loadPage(){
+
+function loading( config ){
+
+	console.log('loading.js loaded');
+
+	$( document ).ready( function() {
 		setTimeout(function(){
-			$('.loading').addClass('loaded');
-		},5000);
-	}
+			$( '.' + config.loadingClass ).addClass( config.loadedClass );
+		}, config.loadDelay );
+	});
 
-	function setupLoading( selector ) {
+}
 
-		$( document ).ready( function() {
-			loadPage();
-		});
 
-	}
-
-	return {
-		loadPage: loadPage,
-		setupLoading: setupLoading
-	};
-};
+export { loading };

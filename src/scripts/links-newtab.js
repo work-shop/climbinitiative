@@ -1,8 +1,10 @@
-"use strict";
+'use strict';
 
-module.exports = function($) {
 
-	function initialize() {
+function linksNewtab( config ) {
+	console.log('links-newtab.js loaded');
+
+	$(document).ready( function() {
 		$('a').each(function() {
 			var a = new RegExp('/' + window.location.host + '/');
 			if(!a.test(this.href)) {
@@ -13,11 +15,8 @@ module.exports = function($) {
 				});
 			}
 		});
-	}
+	});
 
+}
 
-	return {
-		initialize: initialize
-	};
-
-};
+export { linksNewtab };

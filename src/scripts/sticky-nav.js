@@ -1,73 +1,23 @@
 "use strict";
 
-module.exports = function( $ ){
+var stickyNavProperties = {
+	offset : {},
+	triggerPosition : {}
+};
 
-	var stickyNav = {};
-	var activated = false;
+function stickyNav( config ) {
+	console.log("sticky-nav.js loaded");
 
+	stickyNavProperties.selector = config.selector || '#nav';
+	stickyNavProperties.navHeight = config.navHeight || 75;
+	stickyNavProperties.mobileNavHeight = config.mobileNavHeight || 50;
+	stickyNavProperties.element = $(stickyNavProperties.selector);
+	stickyNavProperties.mobileBreakpoint = config.mobileBreakpoint;
+	stickyNavProperties.activeOnMobile = config.activeOnMobile;
 
-	function initialize( selector, navHeight, mobileNavHeight ){
-
-		stickyNav.selector = selector;
-		stickyNav.navHeight = navHeight;
-		stickyNav.mobileNavHeight = mobileNavHeight;
-		stickyNav.element = $(stickyNav.selector);
-
-		//stickyNav.previousElement = $(stickyNav.previousElementSelector);
+	$(document).ready( function() {
 
 		calculatePositions();
-
-		if( activated === false ){
-			activate();
-			activated = true;
-		}		
-	}
-
-
-	function calculatePositions(){
-		stickyNav.offset = stickyNav.element.offset();
-		stickyNav.offset = stickyNav.offset.top;
-
-		if( $(window).width() > 768){
-			stickyNav.triggerPosition = stickyNav.offset - stickyNav.navHeight;	
-		}
-		else{
-			stickyNav.triggerPosition = stickyNav.offset - stickyNav.mobileNavHeight;				
-		}
-
-		//console.log('calculatePositions');
-		//console.log('stickyNav.triggerPosition = ' + stickyNav.triggerPosition); 	
-	}
-
-
-	function checkNavPosition(){
-
-		if( $(window).width() > 768){
-			console.log('checkNavPosition with stickyNav.triggerPosition: ' + stickyNav.triggerPosition);
-			if ( $('body').scrollTop() >= stickyNav.triggerPosition && stickyNav.element.hasClass('static') ){
-				toggleNav();
-			}else if($('body').scrollTop() < stickyNav.triggerPosition && stickyNav.element.hasClass('fixed') ){
-				toggleNav();
-			}			
-		}
-
-	}
-
-
-	function toggleNav(){
-
-		if ( stickyNav.element.hasClass('static') ){
-			stickyNav.element.removeClass('static').addClass('fixed');
-			$('body').addClass('sticky-nav-fixed');
-		}else if( stickyNav.element.hasClass('fixed') ){
-			stickyNav.element.removeClass('fixed').addClass('static');
-			$('body').removeClass('sticky-nav-fixed');			
-		}	
-
-	}
-
-
-	function activate() {
 
 		$('body').on({ 'touchmove': function(e) { 
 			window.requestAnimationFrame(checkNavPosition); } 
@@ -78,19 +28,49 @@ module.exports = function( $ ){
 		});
 
 		$( window ).resize( function() {
-			console.log('resize');
 			window.requestAnimationFrame(calculatePositions);
 			window.requestAnimationFrame(checkNavPosition);
-		});		
+		});	
+
+	});
+
+}
+
+
+function calculatePositions(){
+
+	stickyNavProperties.offset = stickyNavProperties.element.offset();
+	stickyNavProperties.triggerPosition = stickyNavProperties.offset.top;
+
+}
+
+
+function checkNavPosition(){
+	
+	if( $(window).width() > stickyNavProperties.mobileBreakpoint || stickyNavProperties.activeOnMobile ){
+				
+		if ( $(window).scrollTop() >= stickyNavProperties.triggerPosition && stickyNavProperties.element.hasClass('static') ){
+			toggleNav();
+		}else if($(window).scrollTop() < stickyNavProperties.triggerPosition && stickyNavProperties.element.hasClass('fixed') ){
+			toggleNav();
+		}
 
 	}
 
+}
 
-	//return an object with methods that correspond to above defined functions
-	return {
-		initialize: initialize,
-		checkNavPosition: checkNavPosition,
-		activate: activate
-	};
 
-};
+function toggleNav(){
+
+	if ( stickyNavProperties.element.hasClass('static') ){
+		stickyNavProperties.element.removeClass('static').addClass('fixed');
+		$('body').addClass('sticky-nav-fixed');
+	}else if( stickyNavProperties.element.hasClass('fixed') ){
+		stickyNavProperties.element.removeClass('fixed').addClass('static');
+		$('body').removeClass('sticky-nav-fixed');			
+	}	
+
+}
+
+
+export { stickyNav };
