@@ -2,12 +2,12 @@
 <nav id="nav" class="fixed">
 	<div class="container-fluid">
 		<div class="row">
-			<div class="logo col-sm-3 col-xs-6">
+			<div class="logo col-sm-2 col-xs-6 nav-col">
 				<a href="/">
 					<?php get_template_part('partials/logo'); ?>
 				</a>
 			</div>
-			<div class="col-sm-9 col-xs-6" id="nav-menu">
+			<div class="col-sm-10 col-xs-6 nav-col" id="nav-menu">
 				<?php wp_nav_menu(); ?>
 			</div>
 		</div>

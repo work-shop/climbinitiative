@@ -2,7 +2,7 @@
 
 var global_config = {
     navHeight: 75,
-    mobileNavHeight: 50,  
+    mobileNavHeight: 60,  
     navPadding: 75,      
     transitionDuration: 1000,
     mobileBreakpoint: 768

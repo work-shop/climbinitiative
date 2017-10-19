@@ -4,6 +4,18 @@
 	background: linear-gradient( 45deg, $brand-gradient-1 30%, $brand-gradient-2 60%, $brand-gradient-3 90%);	
 }
 
+
+.gradient-reverse{
+    background: $brand;
+    background: linear-gradient( 45deg, $brand-gradient-3 30%, $brand-gradient-2 60%, $brand-gradient-1 90%);   
+}
+
+.gradient-mobile-menu{
+    background: $brand;
+    background: linear-gradient( 35deg, $brand-gradient-3 5%, $brand-gradient-2 40%, $brand-gradient-1 90%);   
+}
+
+
 html{
     min-height: 100%;/* make sure it is at least as tall as the viewport */
     position: relative;
