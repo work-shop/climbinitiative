@@ -2,7 +2,7 @@
 $text-nav: (
 	xs: (13px, 53px),
 	sm: (13px, 53px),
-	md: (13px, 53px),
+	md: (14px, 53px),
 	lg: (14px, 53px),
 	xl: (15px, 53px)
 	);
@@ -19,16 +19,23 @@ $nav-margin-top: 30px;
 	@extend .gradient;
 	clip-path: inset(0% 0% calc( 100% - #{$nav-height} ) 0%);
 
-	.nav-col{
-		margin-top: $nav-margin-top
+	@media screen and (max-width: $md) {
+		.container-fluid{
+			padding-left: 30px;
+			padding-right: 30px;
+		}
+	}
+
+	@media screen and (max-width: $sm) {
+		clip-path: inset(0% 0% calc( 100% - #{$nav-height-mobile} ) 0%);
 	}
 
 	&.fixed{
 		position: fixed;
 	}
 
-	@media screen and (max-width: $sm) {
-		clip-path: inset(0% 0% calc( 100% - #{$nav-height-mobile} ) 0%);
+	.nav-col{
+		margin-top: $nav-margin-top
 	}
 
 	ul{
@@ -62,7 +69,11 @@ $nav-margin-top: 30px;
 
 			@media screen and (max-width: $lg) {
 				padding: 0 8px;
-			}			
+			}	
+
+			@media screen and (max-width: $md) {
+				padding: 0 6px;
+			}				
 
 			@media screen and (max-width: $sm) {
 				display: none;
