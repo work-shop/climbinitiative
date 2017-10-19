@@ -9,7 +9,7 @@
 			if( wp_title() ){
 				wp_title();
 			} else{
-				bloginfo( 'name' ); echo '-';  bloginfo( 'description' );
+				bloginfo( 'name' ); echo ' - ';  bloginfo( 'description' );
 			}
 		?>
 	</title>

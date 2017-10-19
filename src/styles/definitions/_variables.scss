@@ -56,14 +56,14 @@ $brand-gradient-3: $lime;
 
 
 $font-brand: 'Fugue', Helvetica, Arial, Sans-serif;
-$font-main: Helvetica, Arial, Sans-serif;
-$font-italic: Helvetica, Arial, Sans-serif;
-$font-bold: Helvetica, Arial, Sans-serif;
-$font-bold-italic: Helvetica, Arial, Sans-serif;
-$font-medium: Helvetica, Arial, Sans-serif;
-$font-medium-italic: Helvetica, Arial, Sans-serif;
-$font-light: Helvetica, Arial, Sans-serif;
-$font-light-italic: Helvetica, Arial, Sans-serif;
+$font-main: 'Helvetica', Helvetica, Arial, Sans-serif;
+$font-italic: 'Helvetica-Italic', Helvetica, Arial, Sans-serif;
+$font-bold: 'Helvetica-Bold', Helvetica, Arial, Sans-serif;
+$font-bold-italic: 'Helvetica-Bold-Italic', Helvetica, Arial, Sans-serif;
+$font-medium: 'Helvetica-Medium', Helvetica, Arial, Sans-serif;
+$font-medium-italic: 'Helvetica-Medium-Italic', Helvetica, Arial, Sans-serif;
+$font-light: $font-main;
+$font-light-italic: $font-italic;
 $font-serif: Georgia, Times New Roman, Serif;
 $font-serif-italic: Georgia, Times New Roman, Serif;
 $font-serif-bold: Georgia, Times New Roman, Serif;

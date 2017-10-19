@@ -44,6 +44,25 @@ body{
 }
 
 
+.border-box{
+	border: 4px solid white;
+	padding: 90px;
+
+	@media screen and (max-width: $lg) {
+		padding: 60px;
+	}
+
+	@media screen and (max-width: $sm) {
+		padding: 30px;
+	}
+
+	@media screen and (max-width: $xs) {
+		padding: 15px;
+	}
+}
+
+
+
 /* sitewide button styles */
 
 $text-button: (

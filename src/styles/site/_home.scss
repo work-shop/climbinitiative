@@ -2,5 +2,25 @@
 /* home page */
 
 #home-intro{
-	//height: 100vh;
+
+	svg{
+		width: 200px;
+
+		@media screen and (max-width: $sm) {
+			width: 160px;
+		}
+	}
+
+	.container-fluid{
+		max-width: 1170px;
+	}
+
+	.wysiwyg{
+		*{
+			color: white;
+			@extend .font-medium;
+		}
+
+	}
+
 }

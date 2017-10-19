@@ -12,7 +12,6 @@
 
 body{
 	font-family: $font-main;
-	font-weight: normal;
 	@include text-size($text-regular);
 	color: $dark;
 }
@@ -33,7 +32,6 @@ body{
 
 	&.bold,&strong{
 		font-family: $font-serif-bold;
-		font-weight: 700;
 	}
 
 }
@@ -82,11 +80,14 @@ p{
 
 .bold,strong{
 	font-family: $font-bold;
-	font-weight: bold;
 }
 
 .italic,em{
 	font-family: $font-italic;
+}
+
+.font-medium{
+	font-family: $font-medium;
 }
 
 .font-light{

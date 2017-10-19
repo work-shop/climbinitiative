@@ -12,10 +12,6 @@
 
 	@include text-size($text-page-body);
 
-	*{
-		@extend .serif;
-	}
-
 	.p1{
 		padding: 0;
 	}
