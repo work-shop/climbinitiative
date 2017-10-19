@@ -27,6 +27,13 @@ $nav-margin-top: 30px;
 	}
 
 	@media screen and (max-width: $sm) {
+		.container-fluid{
+			padding-left: $container-fluid-padding-mobile;
+			padding-right: $container-fluid-padding-mobile;
+		}	
+	}
+
+	@media screen and (max-width: $sm) {
 		clip-path: inset(0% 0% calc( 100% - #{$nav-height-mobile} ) 0%);
 	}
 
