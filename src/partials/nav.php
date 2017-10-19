@@ -10,9 +10,9 @@
 			<div class="col-sm-9 col-xs-6" id="nav-menu">
 				<?php wp_nav_menu(); ?>
 			</div>
-
 		</div>
 	</div>
+	<div class="nav-background"></div>	
 </nav>
 <div id="mobile-nav">
 	<ul class="mobile-nav-items">

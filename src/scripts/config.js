@@ -63,6 +63,12 @@ var config = {
         fade: true,
         autoplaySpeed: 5000,
         speed: 700        
+    },
+    gradient: {
+        navSelector: '#nav',
+        navHeight: global_config.navHeight,
+        mobileNavHeight: global_config.mobileNavHeight,
+        mobileBreakpoint: global_config.mobileBreakpoint
     }
 };
 

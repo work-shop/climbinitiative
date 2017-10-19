@@ -2,8 +2,8 @@
 	font-family: 'modern_pictograms_proregular';
 	src: url('../../fonts/modernpictogramspro_234.eot');
 	src: url('../../fonts/modernpictogramspro_234.eot?#iefix') format('embedded-opentype'),
-		url('../../fonts/modernpictogramspro_234.woff') format('woff'),
-		url('../../fonts/modernpictogramspro_234.ttf') format('truetype');
+	url('../../fonts/modernpictogramspro_234.woff') format('woff'),
+	url('../../fonts/modernpictogramspro_234.ttf') format('truetype');
 	font-weight: normal;
 	font-style: normal;
 }
@@ -44,26 +44,32 @@ body{
 //massive, huge, large, medium, regular, small
 
 h1,.h1{
+	font-family: $font-brand;
 	@include text-size($text-massive);
 }
 
 h2,.h2{
+	font-family: $font-brand;
 	@include text-size($text-huge);
 }
 
 h3,.h3{
+	font-family: $font-brand;
 	@include text-size($text-large);
 }
 
 h4,.h4{
+	font-family: $font-brand;
 	@include text-size($text-regular);
 }
 
 h5,.h5{
+	font-family: $font-brand;
 	@include text-size($text-small);
 }
 
 h6,.h6{
+	font-family: $font-brand;
 	@include text-size($text-small);
 }
 

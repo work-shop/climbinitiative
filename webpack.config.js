@@ -22,25 +22,25 @@ const script = {
 const libStyle = {
     test: /\.css$/i,
     include: [
-        /node_modules/,
-        /styles\/lib/
+    /node_modules/,
+    /styles\/lib/
     ],
     use: [
-        'style-loader',
-        {
-            loader: 'css-loader',
-            options: {
-                importLoaders: 1
-            }
+    'style-loader',
+    {
+        loader: 'css-loader',
+        options: {
+            importLoaders: 1
         }
+    }
     ]
 }
 
 const style = {
     test: /\.scss$/i,
     exclude: [
-        /node_modules/,
-        /styles\/lib/
+    /node_modules/,
+    /styles\/lib/
     ],
     use: ExtractTextPlugin.extract({
         fallback: {
@@ -50,34 +50,34 @@ const style = {
             }
         },
         use: [
-            {
-                loader: 'css-loader',
-                options: {
-                    sourceMap: true,
-                    importLoaders: 1,
-                    minimize: true
-                }
-            },
-            { loader: 'resolve-url-loader' },
-            {
-                loader: 'postcss-loader',
-                options: {
-                    plugins: function() {
-                        return [
-                            require('precss'),
-                            require('autoprefixer')
-                        ];
-                    },
-                    sourceMap: true
-                }
-            },
-            {
-                loader: 'sass-loader',
-                options: {
-                    sourceMap: true,
-                    includePaths: [ require('bourbon').includePaths, require('bourbon-neat').includePaths, path.join(__dirname,'node_modules','slick-carousel', 'slick') ]
-                }
+        {
+            loader: 'css-loader',
+            options: {
+                sourceMap: true,
+                importLoaders: 1,
+                minimize: true
             }
+        },
+        { loader: 'resolve-url-loader' },
+        {
+            loader: 'postcss-loader',
+            options: {
+                plugins: function() {
+                    return [
+                    require('precss'),
+                    require('autoprefixer')
+                    ];
+                },
+                sourceMap: true
+            }
+        },
+        {
+            loader: 'sass-loader',
+            options: {
+                sourceMap: true,
+                includePaths: [ require('bourbon').includePaths, require('bourbon-neat').includePaths, path.join(__dirname,'node_modules','slick-carousel', 'slick') ]
+            }
+        }
         ]
     })
 };
@@ -96,27 +96,31 @@ const font = {
 const image = {
     test: /\.(jpe?g|png|gif|svg)$/i,
     use: [
-        {
-            loader:'file-loader',
-            options: {
-                hash: 'sha512',
-                digest: 'hex',
-                name: 'images/[hash].[ext]'
-            }
-        },
-        { loader: 'image-webpack-loader' }
+    {
+        loader:'file-loader',
+        options: {
+            hash: 'sha512',
+            digest: 'hex',
+            name: 'images/[hash].[ext]'
+        }
+    },
+    { loader: 'image-webpack-loader' }
     ]
 };
 
-const plugins = [
+    const plugins = [
     new CleanWebpackPlugin( paths.dest ),
     new CopyWebpackPlugin([
-        {
-            from: 'style.css'
-        },
-        {
-            from: '**/*.php'
-        }
+    {
+        from: 'style.css'
+    },
+    {
+        from: '**/*.php'
+    },
+    {
+        from: 'images',
+        to: 'images'
+    }
     ]),
     new ExtractTextPlugin('[name]'),
     new webpack.ProvidePlugin({
@@ -133,54 +137,54 @@ const plugins = [
         }
     }),
     /** Uncomment this plugin, and update the "logo" key
-        to generate properly-sized favicons from a source, hi-res file. */
-    new FaviconsPlugin({
-        logo: './images/favicon.png',
-        prefix: 'images/',
-        emitStates: false,
-        inject: false,
-        icons: {
-            android: false,
-            appleIcon: true,
-            appleStartup: false,
-            coast: false,
-            favicons: true,
-            firefox: true,
-            opengraph: false,
-            twitter: false,
-            yandex: false,
-            windows: false
-        }
-    }),
+    to generate properly-sized favicons from a source, hi-res file. */
+    // new FaviconsPlugin({
+    //     logo: './images/favicon.png',
+    //     prefix: 'images/',
+    //     emitStates: false,
+    //     inject: false,
+    //     icons: {
+    //         android: false,
+    //         appleIcon: true,
+    //         appleStartup: false,
+    //         coast: false,
+    //         favicons: true,
+    //         firefox: true,
+    //         opengraph: false,
+    //         twitter: false,
+    //         yandex: false,
+    //         windows: false
+    //     }
+    // }),
     /** Uncomment this to minify code output */
     //new MinifyPlugin({}, {})
-];
+    ];
 
-const config = {
-    entry: {
-        'scripts/bundle.js': './scripts/main.js',
-        'styles/bundle.css': './styles/main.scss'
-    },
-    output: {
-        path: path.resolve(__dirname, paths.dest),
-        filename:'[name]',
-        publicPath: `${paths.public}/`
-    },
-    module: {
-        rules:[
+    const config = {
+        entry: {
+            'scripts/bundle.js': './scripts/main.js',
+            'styles/bundle.css': './styles/main.scss'
+        },
+        output: {
+            path: path.resolve(__dirname, paths.dest),
+            filename:'[name]',
+            publicPath: `${paths.public}/`
+        },
+        module: {
+            rules:[
             script,
             libStyle,
             style,
             font,
             image
-        ]
-    },
-    devtool: 'source-map',
-    context: path.resolve(__dirname, paths.src),
-    externals: {
-        jquery: 'jQuery'
-    },
-    plugins: plugins,
-};
+            ]
+        },
+        devtool: 'source-map',
+        context: path.resolve(__dirname, paths.src),
+        externals: {
+            jquery: 'jQuery'
+        },
+        plugins: plugins,
+    };
 
-module.exports = config;
+    module.exports = config;

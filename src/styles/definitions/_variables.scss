@@ -46,18 +46,24 @@ $lg: 1199px;
 
 //site
 $body-background-color: white;
-$yellow: #FDBA44;
-$yellow: #FFCB45;
-$yellow-darker: darken($yellow, 16%);
+$dark-blue: #152e65;
+$blue: #1b75bc;
+$green: #2bb673;
+$lime: #80c342;
+$brand-gradient-1: $blue;
+$brand-gradient-2: $green;
+$brand-gradient-3: $lime;
 
-$font-main: 'Founders-Regular', Helvetica, Arial, Sans-serif;
-$font-italic: 'Founders-Regular-Italic', Helvetica, Arial, Sans-serif;
-$font-bold: 'Founders-Semibold', Helvetica, Arial, Sans-serif;
-$font-bold-italic: 'Founders-Semibold-Italic', Helvetica, Arial, Sans-serif;
-$font-medium: 'Founders-Medium', Helvetica, Arial, Sans-serif;
-$font-medium-italic: 'Founders-Medium-Italic', Helvetica, Arial, Sans-serif;
-$font-light: 'Founders-Light', Helvetica, Arial, Sans-serif;
-$font-light-italic: 'Founders-Light-Italic', Helvetica, Arial, Sans-serif;
+
+$font-brand: 'Fugue', Helvetica, Arial, Sans-serif;
+$font-main: Helvetica, Arial, Sans-serif;
+$font-italic: Helvetica, Arial, Sans-serif;
+$font-bold: Helvetica, Arial, Sans-serif;
+$font-bold-italic: Helvetica, Arial, Sans-serif;
+$font-medium: Helvetica, Arial, Sans-serif;
+$font-medium-italic: Helvetica, Arial, Sans-serif;
+$font-light: Helvetica, Arial, Sans-serif;
+$font-light-italic: Helvetica, Arial, Sans-serif;
 $font-serif: Georgia, Times New Roman, Serif;
 $font-serif-italic: Georgia, Times New Roman, Serif;
 $font-serif-bold: Georgia, Times New Roman, Serif;
