@@ -24,3 +24,20 @@
 	}
 
 }
+
+#home-conference{
+
+	.border-box{
+		padding: 60px;
+
+		@media screen and (max-width: $sm) {
+			padding: 30px;
+		}
+
+		@media screen and (max-width: $sm) {
+			padding: 15px;
+		}
+
+	}
+
+}

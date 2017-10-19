@@ -61,6 +61,31 @@ body{
 	}
 }
 
+.border-box-button{
+	font-family: $font-brand;
+	text-transform: uppercase;
+	@extend .tracked;
+	font-size: 17px;
+
+	@media screen and (max-width: $sm) {
+		font-size: 14px;
+	}
+
+	&:after{
+		content: 'Î';
+		font-family: $font-icon;
+		display: inline;
+		margin-left: 10px;
+		font-size: 30px;
+		position: relative;
+		//top: -2px;
+
+		@media screen and (max-width: $sm) {
+			font-size: 24px;
+			top: 2px;
+		}
+	}
+}
 
 
 /* sitewide button styles */

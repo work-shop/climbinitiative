@@ -63,7 +63,12 @@
 
 	&.mask-dark{
 		&:after{
-			background: transparentize( $dark, .75 );
+			$mask-dark: darken($blue, 20%);
+			background: transparentize( $mask-dark, .68 );
+
+			@media screen and (max-width: $sm) {
+				background: transparentize( $mask-dark, .55 );
+			}
 		}
 	}
 }

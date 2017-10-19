@@ -32,6 +32,6 @@ body{
     left: 0;
     right: 0;
     overflow: hidden;
-    z-index: -1; /* Remove this line if it's not going to be a background! */
+    z-index: -2; /* Remove this line if it's not going to be a background! */
     @extend .gradient;
 }

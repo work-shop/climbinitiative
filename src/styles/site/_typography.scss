@@ -157,6 +157,12 @@ p{
 
 //icons
 
+$font-icon: 'modern_pictograms_proregular';
+
+.font-icon{
+	font-family: $font-icon;
+}
+
 .icon{
 	&:before {
 		content: attr(data-icon);
