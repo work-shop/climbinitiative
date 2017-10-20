@@ -17,5 +17,52 @@
 
 .conference-heading{
 	display: inline-block;
-	border: 2px solid white;
+	border: 3px solid white;
+	padding: 10px 12px;
 }
+
+
+/* agenda */
+
+.agenda-item{
+	margin-bottom: 55px;
+}
+
+.agenda-left{
+	*{
+		text-align: right;
+	}
+}
+
+.agenda-item-time{
+	margin-bottom: 0;
+	font-size: 20px;
+}
+
+.agenda-item-location{
+	margin-top: -3px;
+	font-size: 17px;
+	opacity: .8;
+}
+
+.agenda-item-title{
+	margin-top: 15px;
+	margin-bottom: 25px;
+}
+
+.agenda-item-participant{
+	margin-bottom: 0;
+
+	h4{
+		font-family: $font-bold;
+		margin-bottom: 0;
+	}
+
+	span{
+		font-family: $font-main;
+	}
+}
+
+
+
+
