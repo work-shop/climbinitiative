@@ -80,7 +80,7 @@
 		font-family: $font-brand;
 		padding: 10px 15px;
 		background: $dark-blue;
-		background: linear-gradient( 20deg, $dark-blue 24%, $blue 120%);		
+		background: linear-gradient( 45deg, $dark-blue 16%, darken($blue, 12%) 120%);		
 		color: white;
 		border: 2px solid white;
 		font-size: 17px;
@@ -104,7 +104,6 @@
 
 	}
 }
-
 
 
 .conference-heading{
