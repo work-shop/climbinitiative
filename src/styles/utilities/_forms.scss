@@ -90,7 +90,6 @@ input,textarea{
 	}
 
 	&[type="submit"]{
-		@include text-size($text-button);
 		background: $brand;
 		padding: 10px 10px;
 		font-family: $font-medium;
