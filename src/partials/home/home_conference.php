@@ -1,5 +1,5 @@
 
-<section class="block spy-target vh100 pt7 pb7" id="home-conference">
+<section class="block spy-target vhm100 pt7 pb7" id="home-conference">
 
 	<?php
 	$image = get_field('conf_preview_image','88');
@@ -28,7 +28,7 @@
 						<?php the_field('conf_introduction','88'); ?>
 					</h3>
 					<a href="#" class="white border-box-button">
-						Conference Details
+						Conference Details <span class="icon ml1" data-icon="Î"></span>
 					</a>
 				</div>
 			</div>

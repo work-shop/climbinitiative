@@ -33,3 +33,12 @@
 	}
 
 }
+
+.vhfull-min{
+	min-height: calc(100vh - #{$nav-height});
+
+	@media screen and (max-width: $sm) {
+		min-height: calc(100vh - #{$nav-height-mobile});
+	}
+
+}
