@@ -163,7 +163,8 @@ const image = {
     const config = {
         entry: {
             'scripts/bundle.js': './scripts/main.js',
-            'styles/bundle.css': './styles/main.scss'
+            'styles/bundle.css': './styles/main.scss',
+            'styles/admin.css': './styles/admin.scss'
         },
         output: {
             path: path.resolve(__dirname, paths.dest),

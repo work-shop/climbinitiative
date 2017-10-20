@@ -1,7 +1,13 @@
 <?php get_template_part('partials/header'); ?>
 
-<div class="container">
-    <div class="col-sm-3"><h1>Page - Conference</h1></div>
-</div>
+<?php get_template_part('partials/home/home_preview'); ?>
+
+<?php get_template_part('partials/conference/conference_agenda'); ?>
+
+<?php get_template_part('partials/conference/conference_speakers'); ?>
+
+<?php get_template_part('partials/conference/conference_researchers'); ?>
+
+<?php get_template_part('partials/conference/conference_live_stream'); ?>
 
 <?php get_template_part('partials/footer'); ?>

@@ -2,7 +2,7 @@
 
 
 
-    class CLIMBInitiative {
+class CLIMBInitiative {
 
         /**
          * The constructor's job is to register all of the actions and filters
@@ -31,10 +31,10 @@
             add_action("wp_before_admin_bar_render", array($this, "remove_admin_bar_items"));
             add_action("wp_enqueue_scripts", array($this, "enqueue"));
             add_action('admin_menu', array($this, 'remove_screen_options'));
+            add_action('admin_enqueue_scripts', array($this, 'admin_styles'));     
 
             add_filter('show_admin_bar', '__return_false');
             add_filter('wp_get_attachment_url', array($this, 'rewrite_cdn_url') );
-
 
         }
 
@@ -352,7 +352,7 @@
             register_setting(
                 'general',
                 'cdn_url'
-                );
+            );
 
             add_settings_field(
                 'cdn_url',
@@ -361,8 +361,25 @@
                 'general',
                 'default',
                 array( 'cdn_url', get_option('cdn_url') )
-                );
+            );
         }
+
+
+        /**
+         * Add custom CSS to the wordpress admin pages, in some cases only if the user is not an admin
+         */
+        public function admin_styles() {
+            $admin = "/styles/admin.css";
+            
+            $user = wp_get_current_user();
+
+           if ( !in_array( 'administrator', $user->roles ) ) {
+                $admin_src = get_template_directory_uri() . $admin;
+                $admin_ver = filemtime(get_template_directory() . $admin);
+                wp_enqueue_style("admin", $admin_src, array(), $admin_ver);
+            }
+
+        }        
 
         /**
          * Callback function to render the CDN URL field in the options.

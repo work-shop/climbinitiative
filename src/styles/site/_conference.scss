@@ -1,0 +1,21 @@
+
+
+.page-id-70{
+
+	#page-background{
+		background: $dark-blue;
+		background: linear-gradient( 25deg, $dark-blue 0%, $blue 90%);		
+	}
+
+
+	#home-conference{
+		.border-box-button{
+			display: none;
+		}
+	}
+}
+
+.conference-heading{
+	display: inline-block;
+	border: 2px solid white;
+}
