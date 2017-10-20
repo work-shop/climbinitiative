@@ -8,9 +8,9 @@ function jumpLinks(config){
 
 		$(config.selector).click(function(e){
 
-			if(config.preventUrlChange){
+			//if(config.preventUrlChange){
 				e.preventDefault();
-			}
+			//}
 
 			var offset = 0;
 

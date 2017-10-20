@@ -9,7 +9,7 @@ import { jumpLinks } from './jump-links.js';
 import { modals } from './modals.js';
 import { scrollSpy } from './scroll-spy.js';
 import { menuToggle } from './menu-toggle.js';
-import { slickSlideshows } from './slick-slideshows.js';
+//import { slickSlideshows } from './slick-slideshows.js';
 import { gradient } from './gradient.js';
 
 
@@ -20,7 +20,7 @@ jumpLinks(config.jumpLinks);
 modals(config.modals);
 scrollSpy(config.scrollSpy);
 menuToggle(config.menuToggle);
-slickSlideshows(config.slickSlideshows);
+//slickSlideshows(config.slickSlideshows);
 gradient(config.gradient);
 
 

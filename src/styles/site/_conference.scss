@@ -9,53 +9,229 @@
 
 
 	#home-conference{
+
+		@extend .vhfull-min;
+
 		.border-box-button{
 			display: none;
 		}
+
+		@media screen and (max-width: $sm) {
+			padding-top: 5em;
+		}
+	}
+
+	#footer{
+		@extend .gradient;
+	}
+
+	#nav{
+		@extend .gradient;
+		height: $nav-height !important;
 	}
 }
+
+
+/* conference nav */
+
+#conference-nav{
+
+	position: fixed;
+	width: 100%;	
+	bottom: 40px;
+	z-index: 5;
+
+	@media screen and (max-width: $sm) {
+		background: linear-gradient( 35deg, $dark-blue 10%, $blue 90%);
+		bottom: 0;
+		border-top: 2px solid white;
+		height: 60px;		
+	}
+	
+	ul{
+		margin: 0 auto;
+		text-align: center;
+
+		@media screen and (max-width: $sm) {
+			margin-top: 7px;
+		}
+	}
+
+	li{
+		display: inline-block;
+		margin: 0 20px;
+		width: 180px;
+
+		@media screen and (max-width: 1130px) {
+			width: 132px;
+			margin: 0 8px;
+		}
+
+		@media screen and (max-width: $sm) {
+			width: auto;
+			line-height: 1.1;
+		}
+	}
+
+	a{
+		display: block;
+		text-transform: uppercase;
+		@extend .tracked-less;
+		font-family: $font-brand;
+		padding: 10px 15px;
+		background: $dark-blue;
+		background: linear-gradient( 20deg, $dark-blue 24%, $blue 120%);		
+		color: white;
+		border: 2px solid white;
+		font-size: 17px;
+
+		&.spy-active{
+			//border-color: $blue;
+		}		
+
+		@media screen and (max-width: 1130px) {
+			font-size: 15px;
+			padding: 6px 6px;
+		}
+
+		@media screen and (max-width: $sm) {
+			font-size: 13px;
+			padding: 4px 4px;
+			border: none;
+			background: none;
+		}
+
+
+	}
+}
+
+
 
 .conference-heading{
 	display: inline-block;
 	border: 3px solid white;
 	padding: 10px 12px;
+
+	@media screen and (max-width: $sm) {
+		display: block;
+		width: 150px;
+		text-align: center;
+		margin: 0 auto 50px auto;
+		border: 2px solid white;
+		padding: 8px 10px;
+	}
 }
 
 
 /* agenda */
 
-.agenda-item{
-	margin-bottom: 55px;
+#conference-agenda{
+	@media screen and (max-width: $xs) {
+		.container{
+			padding-left: 10px;
+			padding-right: 10px;
+		}
+	}
+
+	@media screen and (max-width: $sm) {
+		padding-top: 3em;
+	}
 }
+
+
+.agenda-item{
+	margin-bottom: 60px;
+	
+	@media screen and (max-width: $sm) {
+		margin-bottom: 40px;
+	}
+
+	@media screen and (max-width: $xs) {
+		border-bottom: 1px solid transparentize(white, .5);
+		margin-bottom: 0;
+		padding: 20px 0;
+
+		&:first-child{
+			border-top: 1px solid transparentize(white, .5);
+		}
+	}
+}
+
+
 
 .agenda-left{
 	*{
 		text-align: right;
+	}
+
+	@media screen and (max-width: $sm) {
+		//text-align: left;
 	}
 }
 
 .agenda-item-time{
 	margin-bottom: 0;
 	font-size: 20px;
+
+	@media screen and (max-width: $sm) {
+		font-size: 16px;
+	}
+
+	@media screen and (max-width: $xs) {
+		font-size: 13px;
+	}
 }
 
 .agenda-item-location{
-	margin-top: -3px;
+	margin-top: -9px;
+	margin-bottom: 0;
 	font-size: 17px;
 	opacity: .8;
+
+	@media screen and (max-width: $sm) {
+		font-size: 14px;
+		margin-top: 0px;
+		line-height: 1;
+	}
 }
 
 .agenda-item-title{
+	margin-top: -5px;
+	margin-bottom: 0px;
+	line-height: 1.2;
+
+	@media screen and (max-width: $xs) {
+		margin-top: -3px;
+	}
+
+	&.has-location{
+		margin-top: 13px;
+	}
+}
+
+.agenda-item-participants{
 	margin-top: 15px;
-	margin-bottom: 25px;
+
+	@media screen and (max-width: $xs) {
+		margin-top: 20px;
+	}
 }
 
 .agenda-item-participant{
 	margin-bottom: 0;
 
+	@media screen and (max-width: $xs) {
+		margin-bottom: 5px;
+	}
+
 	h4{
 		font-family: $font-bold;
-		margin-bottom: 0;
+		margin-bottom: 2px;
+		line-height: 1.2;
+
+		@media screen and (max-width: $xs) {
+			font-size: 14px;
+		}
 	}
 
 	span{
@@ -64,5 +240,9 @@
 }
 
 
-
+#conference-live-stream{
+	iframe{
+		height: 400px;
+	}
+}
 

@@ -45,7 +45,7 @@ var config = {
         spyTargetSelector : '.spy-target',
         spyLinkSelector : '.spy-link',
         spyActiveClass : 'spy-active',
-        spyOffset : 150
+        spyOffset : 50
     },
     menuToggle:{
         menuToggleSelector: '.menu-toggle',

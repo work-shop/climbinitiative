@@ -27,7 +27,7 @@
 					<h3 class="white border-box-text mb2">
 						<?php the_field('conf_introduction','88'); ?>
 					</h3>
-					<a href="#" class="white border-box-button">
+					<a href="/conference" class="white border-box-button">
 						Conference Details <span class="icon ml1" data-icon="Î"></span>
 					</a>
 				</div>
