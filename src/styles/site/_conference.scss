@@ -239,9 +239,67 @@
 }
 
 
-#conference-live-stream{
+#live-stream{
 	iframe{
 		height: 400px;
 	}
 }
+
+
+
+/* speakers */
+
+.speaker{
+	width: 33%;
+	float: left;
+	padding-left: 20px;
+	padding-right: 20px;
+	height: 190px;
+
+	@media screen and (max-width: $lg) {
+		width: 50%;	
+		height: 130px;
+	}
+
+	@media screen and (max-width: $sm) {
+		padding-left: 0;
+		padding-right: 10px;
+		height: 110px;
+	}
+
+	&:hover{
+		cursor: pointer;
+	}
+}
+
+.speaker-name{
+	margin-top: 0;
+
+	@media screen and (max-width: $xs) {
+		font-size: 16px;
+		line-height: 1.1;
+	}
+}
+
+.speaker-position{
+	font-family: $font-main;
+	font-size: 16px;
+	line-height: 1.2;
+
+	@media screen and (max-width: $lg) {
+		font-size: 15px;
+		line-height: 1.1
+	}
+
+	@media screen and (max-width: $sm) {
+		font-size: 11px;
+		line-height: 1;
+	}
+
+}
+
+
+
+
+
 

@@ -1,7 +1,7 @@
 
 <?php $conference = get_field('current_conference'); $conference_id = $conference[0]->ID; ?>
 
-<section class="block spy-target pt8 pb8 vhmin100" id="conference-researchers">
+<section class="block spy-target pt4 pb4 vhmin100" id="researchers">
 	<div class="container">
 		<div class="row">
 			<div class="col-md-2 col-sm-12">

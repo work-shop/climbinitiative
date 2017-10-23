@@ -8,11 +8,11 @@ function jumpLinks(config){
 
 		$(config.selector).click(function(e){
 
-			//if(config.preventUrlChange){
-				e.preventDefault();
-			//}
+			e.preventDefault();
 
 			var offset = 0;
+			var url = $(this).attr('href');
+			var stateObj = {}; 
 
 			if( $(window).width() > config.mobileBreakpoint ){
 				offset = config.navHeight + config.jumpPadding;	
@@ -20,9 +20,13 @@ function jumpLinks(config){
 				offset = config.mobileNavHeight + config.jumpPadding;	
 			}
 
+			if( config.preventUrlChange === false ){
+				history.pushState( stateObj, '', url );
+			}
+
 			$('html,body').animate({
-				scrollTop: $( $(this).attr('href') ).offset().top - offset
-			}, config.transitionDuration);
+				scrollTop: $( url ).offset().top - offset
+			}, config.transitionDuration );
 
 		});
 

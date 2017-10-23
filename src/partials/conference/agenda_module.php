@@ -1,7 +1,7 @@
 
 <?php $conference = get_field('current_conference'); $conference_id = $conference[0]->ID; ?>
 
-<div id="agenda">	
+<div id="conference-agenda">	
 
 	<?php 
 	if( have_rows('conf_single_day_agenda', $conference_id ) ):

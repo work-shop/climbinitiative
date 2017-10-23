@@ -1,7 +1,7 @@
 
 <?php $conference = get_field('current_conference'); $conference_id = $conference[0]->ID; ?>
 
-<section class="block spy-target pt8 pb8 vhmin100" id="conference-live-stream">
+<section class="block spy-target pt4 pb8 vhmin100" id="live-stream">
 	<div class="container">
 		<div class="row">
 			<div class="col-md-3 col-sm-12">
