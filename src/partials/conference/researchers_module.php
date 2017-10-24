@@ -1,14 +1,16 @@
 
 <?php $conference = get_field('current_conference'); $conference_id = $conference[0]->ID; ?>
 
-<div id="conference-speakers">
+<div id="conference-researchers">
 	<?php 
-	$speakers = get_field('conf_speakers', $conference_id ); 
-	foreach( $speakers as $person ):
+	$researchers = get_field('conf_researchers', $conference_id ); 
+	foreach( $researchers as $person ):
 		$person_id = $person->ID; 
 		$person_slug = $person->post_name
 		?>
-		<div class="speaker modal-toggle" data-modal-target="modal-<?php echo $person_slug; ?>" id="speaker-<?php echo $person_slug; ?>">
+		<div class="researcher col-xs-4 modal-toggle" data-modal-target="modal-<?php echo $person_slug; ?>" id="speaker-<?php echo $person_slug; ?>">
+			<?php $image = get_field('image',$person_id); ?>
+			<img class="speaker-image" src="<?php echo $image['url']; ?>" alt="Photo of <?php echo get_the_title($person_id); ?>">
 			<h3 class="white speaker-name"><?php echo get_the_title($person_id); ?></h3>
 			<h4 class="white speaker-position"><?php the_field('position',$person_id); ?>, <?php the_field('affiliation',$person_id); ?></h4>
 		</div>

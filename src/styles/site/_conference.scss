@@ -272,6 +272,7 @@
 	}
 }
 
+
 .speaker-name{
 	margin-top: 0;
 
@@ -298,7 +299,7 @@
 
 }
 
-.modal-speaker{
+.modal-person{
 
 	.speaker-image{
 		margin-bottom: 20px;
@@ -347,6 +348,24 @@
 	}
 }
 
+
+/* researchers */
+
+#researchers{
+	.container{
+		padding-left: 10px;
+		padding-right: 10px;
+	}
+}
+
+.researcher{
+
+	@media screen and (max-width: $xs) {
+		padding-left: 8px;
+		padding-right: 8px;	
+	}
+
+}
 
 
 

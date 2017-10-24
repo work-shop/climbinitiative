@@ -44,6 +44,7 @@ class CLIMBInitiative {
         public function register_image_sizing() {
             if ( function_exists( "add_image_size" ) ) {
                 add_image_size("social_card", 600, 600, array( "x_crop_position" => "center", "y_crop_position" => "center"));
+                add_image_size("person", 600, 600, true);
             }
         }
 
@@ -373,7 +374,7 @@ class CLIMBInitiative {
             
             $user = wp_get_current_user();
 
-           if ( !in_array( 'administrator', $user->roles ) ) {
+            if ( !in_array( 'administrator', $user->roles ) ) {
                 $admin_src = get_template_directory_uri() . $admin;
                 $admin_ver = filemtime(get_template_directory() . $admin);
                 wp_enqueue_style("admin", $admin_src, array(), $admin_ver);
