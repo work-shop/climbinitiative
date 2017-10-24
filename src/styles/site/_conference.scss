@@ -351,14 +351,20 @@
 
 /* researchers */
 
-#researchers{
-	.container{
+.researchers-container{
+
+	@media screen and (max-width: $xs) {
 		padding-left: 10px;
 		padding-right: 10px;
 	}
+
 }
 
 .researcher{
+
+	&:hover{
+		cursor: pointer;
+	}
 
 	@media screen and (max-width: $xs) {
 		padding-left: 8px;
@@ -367,6 +373,25 @@
 
 }
 
+
+/* partners */
+
+.partner{
+	margin-bottom: 30px;
+
+	h3{
+		width: 66%;
+		line-height: 1.1;
+
+		@media screen and (max-width: $lg) {
+			width: 80%;
+		}
+
+		@media screen and (max-width: $sm) {
+			width: 100%;
+		}
+	}
+}
 
 
 
