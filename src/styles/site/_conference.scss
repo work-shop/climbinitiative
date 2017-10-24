@@ -298,6 +298,57 @@
 
 }
 
+.modal-speaker{
+
+	.speaker-image{
+		margin-bottom: 20px;
+		width: 90%;
+
+		@media screen and (max-width: $sm) {
+			max-width: 170px;
+			margin: 0 auto 20px auto;
+		}
+	}
+
+	.speaker-name{
+		line-height: 1.2;
+		margin-bottom: 12px;
+	}
+
+	.speaker-position{
+		font-family: $font-medium;
+
+		@media screen and (max-width: $sm) {
+			line-height: 1.1;
+		}
+	}
+
+	.p1{
+		padding: 0;
+	}
+
+	p{
+		color: white;
+		font-family: $font-medium;
+		margin-top: 0;
+		font-size: 18px;
+		line-height: 1.6;
+		margin-bottom: 1.5em;
+
+		@media screen and (max-width: $md) {
+			font-size: 16px;
+		}
+
+		@media screen and (max-width: $sm) {
+			font-size: 13px;
+			line-height: 1.5;
+			margin-top: 30px;
+		}
+	}
+}
+
+
+
 
 
 

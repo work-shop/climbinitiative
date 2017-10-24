@@ -11,11 +11,11 @@
 
 <?php get_template_part('partials/conference/conference_agenda'); ?>
 
-<?php // get_template_part('partials/conference/conference_speakers'); ?>
+<?php get_template_part('partials/conference/conference_speakers'); ?>
 
-<?php // get_template_part('partials/conference/conference_researchers'); ?>
+<?php get_template_part('partials/conference/conference_researchers'); ?>
 
-<?php // get_template_part('partials/conference/conference_sponsors'); ?>
+<?php get_template_part('partials/conference/conference_sponsors'); ?>
 
 <?php get_template_part('partials/conference/conference_live_stream'); ?>
 

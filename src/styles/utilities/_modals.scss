@@ -2,53 +2,90 @@
 
 .modal{
 	position: fixed;
-	width: 100%;
-	height: 100%;
-	top: 0;
 	left: 0;
+	height: 70vh;
+	top: 15vh;
+	width: 100%;
 	z-index: 9;
+
+	@media screen and (max-width: $sm) {
+		height: 98vh;
+		top: 1vh;
+		width: calc(100% - 2vh);
+		left: 1vh;
+	}
+
 	@include transition(transform $modal-transition);
 
-	@media only screen and (min-width: 1025px){
+	//@media only screen and (min-width: 1025px){
 		@include transition(transform $modal-transition);
 		@include transform(translate(150%, 0%));
-	}
-	@media only screen and (max-width: 1024px){
-		left: 150%;
-	}
+	//}
+	//@media only screen and (max-width: 1024px){
+	//	left: 150%;
+	//}
 
 	&.on{
-		@media only screen and (min-width: 1025px){
+		//@media only screen and (min-width: 1025px){
 			@include transition(transform $modal-transition);
 			@include transform(translate(0%, 0%));
-		}
-		@media only screen and (max-width: 1024px){
-			left: 0%;
-		}
+		//}
+		//@media only screen and (max-width: 1024px){
+		//	left: 0%;
+		//}
 	}
 
 	&.scroll{
-		overflow: scroll;
+		.modal-body{
+			overflow: scroll;
+		}
 	}
 }
 
-#modal-close{
-	position: fixed;
-	top: 20px;
-	right: 3px;
-	height: 40px;
-	width: 40px;
-	z-index: 10;
-	text-align: center;
+.modal-body{
+	border: 4px solid white;
+	background: $brand;
+	padding: 60px;
+	padding-top: 20px;
+	height: 100%;
+	position: relative;
 
-	@include transition(transform $modal-transition);
-	@include transform(translate(100px, 0%));
+	@media screen and (max-width: $sm) {
+		width: 100%;
+		padding: 15px;
+		padding-top: 30px;
+		border: 3px solid white;
+	}
+}
+
+.modal-close-button{
+	float: right;
 
 	.icon:before{
 		font-size: 50px;
 		line-height: 42px;
+		color: white;
+	}
+
+	@media screen and (max-width: $sm) {
+		display: none;
 	}
 }
+
+#mobile-modal-close{
+	display: none;
+	position: fixed;
+	top: 10px;
+	right: 14px;	
+	z-index: 10;
+
+	.icon:before{
+		font-size: 36px;
+		line-height: 36px;
+		color: white;
+	}	
+}
+
 
 #blanket{
 	position: fixed;
@@ -60,8 +97,9 @@
 	left: 200%;
 	@include transition(opacity .1s);
 	opacity: 0;
-	background: transparentize($ultra-light, .5);
+	background: transparentize($dark-blue, .5);
 }
+
 
 //body styles
 .modal-on{
@@ -73,11 +111,13 @@
 
 	#blanket{
 		left: 0;
-		opacity: 1;
+		opacity: .3;
 	}
 
-	.modal-person-blanket{
-		opacity: 1;
+	#mobile-modal-close{
+		@media screen and (max-width: $sm) {
+			display: block;
+		}		
 	}
 
 }
