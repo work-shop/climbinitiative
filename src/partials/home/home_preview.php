@@ -12,7 +12,7 @@
 		<div class="row">
 			<div class="col-md-3 col-xl-3 offset-xl-1">
 				<h1 class="white mb1">
-					Climb<br>
+					CLIMB<br>
 					Conference<br>
 					2017
 				</h1>
