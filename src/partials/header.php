@@ -10,11 +10,11 @@
 
 	<title>
 		<?php 
-			if( is_front_page() ){
-				bloginfo( 'name' ); echo ' | ';  bloginfo( 'description' );
-			} else{
-				wp_title( false ); echo ' | '; bloginfo( 'name' );
-			}
+		if( is_front_page() ){
+			bloginfo( 'name' ); echo ' | ';  bloginfo( 'description' );
+		} else{
+			wp_title( false ); echo ' | '; bloginfo( 'name' );
+		}
 		?>
 	</title>
 
@@ -25,6 +25,7 @@
 
 	<link href="//webfonts.radimpesko.com/RP-W-59e9ba056f3e0c67a9000005.css" rel="stylesheet" type="text/css">
 
+	<?php gravity_form_enqueue_scripts(1,true) ?>
 	<?php wp_head(); ?>
 
 </head>
