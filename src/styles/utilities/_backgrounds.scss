@@ -71,4 +71,15 @@
 			}
 		}
 	}
+	&.mask-darker{
+		&:after{
+			$mask-dark: darken($blue, 20%);
+			background: transparentize( $mask-dark, .5 );
+
+			@media screen and (max-width: $sm) {
+				background: transparentize( $mask-dark, .3 );
+			}
+		}
+	}
+
 }

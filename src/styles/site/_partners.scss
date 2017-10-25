@@ -1,0 +1,30 @@
+
+
+/* partners page */
+
+
+#partners-map{
+
+	.border-box{
+		padding: 40px;
+
+		@media screen and (max-width: $lg) {
+			padding: 20px;
+		}	
+
+		@media screen and (max-width: $sm) {
+			padding: 20px;
+		}
+	}
+
+	.border-box-text{
+		font-family: $font-brand;
+	}
+}
+
+
+#partners-join{
+	.block-background{
+		background-position: center center;
+	}
+}
