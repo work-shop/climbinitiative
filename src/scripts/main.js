@@ -12,6 +12,8 @@ import { menuToggle } from './menu-toggle.js';
 //import { slickSlideshows } from './slick-slideshows.js';
 import { gradient } from './gradient.js';
 
+import { map } from './map.js';
+
 
 loading(config.loading);
 linksNewtab(config.linksNewtab);
@@ -23,5 +25,6 @@ menuToggle(config.menuToggle);
 //slickSlideshows(config.slickSlideshows);
 gradient(config.gradient);
 
+map(config.map);
 
 console.log('main.js loaded');

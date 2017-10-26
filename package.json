@@ -60,6 +60,10 @@
     "webpack": "^3.4.1"
   },
   "dependencies": {
-    "slick-carousel": "^1.8.1"
+    "d3": "^4.11.0",
+    "d3-geo": "^1.9.0",
+    "d3-geo-projection": "^2.3.1",
+    "slick-carousel": "^1.8.1",
+    "topojson": "^3.0.2"
   }
 }

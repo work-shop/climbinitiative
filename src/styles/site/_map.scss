@@ -1,0 +1,68 @@
+.svg-container {
+    display: inline-block;
+    position: relative;
+    width: 100%;
+    padding-bottom: 60%;
+    vertical-align: top;
+    //overflow:hidden;
+}
+
+svg.map {
+    display: inline-block;
+    position: absolute;
+    top:0;
+    left:0;
+}
+
+
+
+.map-lines {
+    fill: $light;
+    stroke: $ultra-light;
+    stroke-width: 0.5px;
+}
+
+.partner-label {
+    @extend .font-icon;
+
+    fill: $brand;
+}
+
+.partner-info {
+
+    &:before {
+        content:" ";
+        position: absolute;
+
+        top:100%;
+        left:50%;
+
+        width: 25px;
+        height:25px;
+        background-color: white;
+        border-right:1px solid $brand;
+        border-bottom:1px solid $brand;
+
+        transform: translate(-50%,-50.5% )rotate(45deg);
+
+    }
+
+    position: absolute;
+    box-sizing: border-box;
+
+    top: -100%;
+    left: -100%;
+
+    background-color: white;
+    border:1px solid $brand;
+    padding:.5em 1.5em 0em 1.5em;
+    width: 25%;
+    text-align: center;
+
+    opacity:0;
+
+    img {
+        width:auto;
+        height:auto;
+    }
+}

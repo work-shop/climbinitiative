@@ -2,8 +2,8 @@
 
 var global_config = {
     navHeight: 75,
-    mobileNavHeight: 60,  
-    navPadding: 75,      
+    mobileNavHeight: 60,
+    navPadding: 75,
     transitionDuration: 1000,
     mobileBreakpoint: 768
 };
@@ -14,7 +14,7 @@ var config = {
         navHeight: global_config.headerHeight,
         mobileNavHeight: global_config.headerHeight,
         mobileBreakpoint: global_config.mobileBreakpoint,
-        activeOnMobile: true        
+        activeOnMobile: true
     },
     linksNewTab: {
     },
@@ -62,13 +62,23 @@ var config = {
         autoplay: true,
         fade: true,
         autoplaySpeed: 5000,
-        speed: 700        
+        speed: 700
     },
     gradient: {
         navSelector: '#nav',
         navHeight: global_config.navHeight,
         mobileNavHeight: global_config.mobileNavHeight,
         mobileBreakpoint: global_config.mobileBreakpoint
+    },
+    map: {
+        mapSelector: '#map',
+        mapAspectRatio: 1/2,
+        scaleRatio: 1.1,
+        partnersEndpoint: "/wp-json/wp/v2/partners?filter[partner_role]=research-partners&per_page=100",
+        researchPartnersTaxonomy: 5,
+        excludedStates:  ['Alaska', 'Hawaii', 'Puerto Rico'],
+        typeOffsetMultiplier: -1/4,
+        fontSize: 32
     }
 };
 
