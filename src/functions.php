@@ -31,10 +31,11 @@ class CLIMBInitiative {
             add_action("wp_before_admin_bar_render", array($this, "remove_admin_bar_items"));
             add_action("wp_enqueue_scripts", array($this, "enqueue"));
             add_action('admin_menu', array($this, 'remove_screen_options'));
-            add_action('admin_enqueue_scripts', array($this, 'admin_styles'));     
+            add_action('admin_enqueue_scripts', array($this, 'admin_styles'));
 
             add_filter('show_admin_bar', '__return_false');
             add_filter('wp_get_attachment_url', array($this, 'rewrite_cdn_url') );
+            add_filter('acf/fields/google_map/api', array($this, 'acf_register_maps_api') );
 
         }
 
@@ -343,6 +344,17 @@ class CLIMBInitiative {
 
         }
 
+        /** This routine adds a maps API key to the ACF google maps api object,
+         * rop prevent an error in which the map on the ACF Location field doesn't load.
+         */
+        public function acf_register_maps_api( $api ) {
+
+            $api['key'] = "AIzaSyAtAummgpTC2_J0cZTmztVY4xhf9XcBe1g";
+
+            return $api;
+
+        }
+
         /**
          * Admin setup registers additional settings on the global options page for us.
          *
@@ -371,7 +383,7 @@ class CLIMBInitiative {
          */
         public function admin_styles() {
             $admin = "/styles/admin.css";
-            
+
             $user = wp_get_current_user();
 
             if ( !in_array( 'administrator', $user->roles ) ) {
@@ -380,7 +392,7 @@ class CLIMBInitiative {
                 wp_enqueue_style("admin", $admin_src, array(), $admin_ver);
             }
 
-        }        
+        }
 
         /**
          * Callback function to render the CDN URL field in the options.
