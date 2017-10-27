@@ -1,20 +1,17 @@
 .svg-container {
-    display: inline-block;
+    display: block;
     position: relative;
     width: 100%;
-    padding-bottom: 60%;
-    vertical-align: top;
-    //overflow:hidden;
+    vertical-align: center;
+    clear: both;
 }
 
 svg.map {
-    display: inline-block;
-    position: absolute;
+    display: block;
+    position: relative;
     top:0;
     left:0;
 }
-
-
 
 .map-lines {
     fill: $light;
@@ -66,5 +63,20 @@ svg.map {
         width:auto;
         height:auto;
         z-index: 100;
+    }
+}
+
+@media screen and (min-width: $sm) {
+    .map-row {
+        position: relative;
+        top:0;
+        left:0;
+    }
+
+    .map-column {
+        position: absolute;
+        top:50%;
+        left: 33.33333%;
+        transform: translateY(-50%);
     }
 }
