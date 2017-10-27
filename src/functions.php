@@ -45,7 +45,7 @@ class CLIMBInitiative {
         public function register_image_sizing() {
             if ( function_exists( "add_image_size" ) ) {
                 add_image_size("social_card", 600, 600, array( "x_crop_position" => "center", "y_crop_position" => "center"));
-                add_image_size("person", 600, 600, true);
+                add_image_size("person", 600, 600, array("x_crop_position" => "center", "y_crop_position" => "center"));
             }
         }
 
