@@ -13,7 +13,7 @@
 					<h1 class="white mb1">
 						<?php the_field('call_to_action_text','84'); ?>
 					</h1>
-					<a href="/conference" class="white border-box-button">
+					<a href="/contact" class="white border-box-button">
 						Contact Us About Partnership <span class="icon ml1" data-icon="Î"></span>
 					</a>
 				</div>
