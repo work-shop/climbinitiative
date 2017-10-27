@@ -5,7 +5,8 @@ var global_config = {
     mobileNavHeight: 60,
     navPadding: 75,
     transitionDuration: 1000,
-    mobileBreakpoint: 768
+    mobileBreakpoint: 768,
+    debug: true
 };
 
 var config = {
@@ -74,11 +75,14 @@ var config = {
         mapSelector: '#map',
         mapAspectRatio: 1/2,
         scaleRatio: 1.1,
-        partnersEndpoint: "/wp-json/wp/v2/partners?filter[partner_role]=research-partners&per_page=100",
+        partnersEndpoint: '/wp-json/wp/v2/partners?filter[partner_role]=research-partners&per_page=100',
         researchPartnersTaxonomy: 5,
         excludedStates:  ['Alaska', 'Hawaii', 'Puerto Rico'],
         typeOffsetMultiplier: -1/4,
-        fontSize: 32
+        fontSize: 32,
+        debug: global_config.debug,
+        transitionDuration: global_config.transitionDuration / 4,
+        mapIdealWidth: 600
     }
 };
 
