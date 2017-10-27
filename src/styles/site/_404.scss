@@ -1,0 +1,87 @@
+#content-404 {
+    position: relative;
+    top:0;
+    left:0;
+}
+
+#content-404 a:hover .edge {
+    transform: translate(-50%,0%)rotate(0deg) !important;
+
+    span:before {
+        content: "Take Me Home";
+        font-size: 3em;
+    }
+
+}
+
+.edge {
+    position:absolute;
+    width:60vw;
+    height:25vh;
+
+    top:50%;
+    left:50%;
+    text-align: center;
+    vertical-align: middle;
+
+    transform: translate(-50%,0%);
+
+    background-color: transparent;
+
+    transition: transform .25s;
+
+    span:before {
+        @extend .h1;
+        font-size: 5em;
+
+        content:"Oops!";
+
+        width: 100%;
+        position: absolute;
+        top:50%;
+        left:0;
+        transform: translateY(-50%);
+
+    }
+
+}
+
+
+.left-edge {
+    border-left: 5px solid white;
+    transform: translate(-50%,0%)rotate(32deg);
+
+
+}
+
+.top-edge {
+    border-top: 5px solid white;
+    transform: translate(-50%,0%)rotate(5deg);
+
+}
+
+.right-edge {
+    border-right: 5px solid white;
+    transform: translate(-50%,0%)rotate(18deg);
+
+}
+
+.bottom-edge {
+    border-bottom: 5px solid white;
+    transform: translate(-50%,0%)rotate(-16deg);
+
+}
+
+.error-404-message {
+    text-align: center;
+}
+
+@media screen and (max-width: $sm) {
+    .edge span:before {
+        font-size: 2.75em;
+    }
+
+    #content-404 a:hover .edge span:before {
+        font-size: 1.5em;
+    }
+}
