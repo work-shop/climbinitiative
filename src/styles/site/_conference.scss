@@ -110,6 +110,7 @@
 	display: inline-block;
 	border: 3px solid white;
 	padding: 10px 12px;
+	line-height: 1.2;
 
 	@media screen and (max-width: $sm) {
 		display: block;

@@ -1,0 +1,30 @@
+
+/* team page */
+
+.person{
+	&:hover{
+		cursor: pointer;
+	}
+}
+
+#researchers-and-staff{
+
+	.col-xs-4{
+		width: 50% !important;
+	}
+
+	.person{
+		margin-bottom: 30px;
+	}
+
+	.speaker-image{
+		display: none;
+	}
+
+	.modal{
+		.speaker-image{
+			display: block;
+		}
+	}
+
+}

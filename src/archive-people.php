@@ -1,7 +1,7 @@
 <?php get_template_part('partials/header'); ?>
 
-<div class="container">
-    <div class="col-sm-3"><h1>Archive - People</h1></div>
-</div>
+<?php get_template_part('partials/team/team_researchers'); ?>
+
+<?php get_template_part('partials/team/team_staff'); ?>
 
 <?php get_template_part('partials/footer' ); ?>
