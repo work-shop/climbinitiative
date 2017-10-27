@@ -4,6 +4,7 @@
     width: 100%;
     vertical-align: center;
     clear: both;
+    z-index:auto;
 }
 
 svg.map {
@@ -23,6 +24,12 @@ svg.map {
     @extend .font-icon;
 
     fill: $brand;
+
+    &:hover {
+        fill: white;
+        stroke: $brand;
+        stroke-width: 1px;
+    }
 }
 
 .partner-info {
@@ -46,7 +53,7 @@ svg.map {
 
     position: absolute;
     box-sizing: border-box;
-    z-index:50;
+    z-index:9;
 
     top: -100%;
     left: -100%;
@@ -60,9 +67,10 @@ svg.map {
     opacity:0;
 
     img {
+        position: relative;
         width:auto;
         height:auto;
-        z-index: 100;
+        z-index: 10;
     }
 }
 
