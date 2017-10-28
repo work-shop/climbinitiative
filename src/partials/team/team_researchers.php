@@ -4,7 +4,7 @@
 		<div class="row">
 			<div class="col-md-3 col-xl-3 col-sm-12">
 				<h3 class="white conference-heading">
-					Principle Investigators				
+					Principal Investigators				
 				</h3>
 			</div>
 			<div class="col-md-9 col-xl-8 offset-xl-1 col-sm-12">
@@ -21,11 +21,11 @@
 							)
 						)
 					) );
-					while ( $the_query->have_posts() ) : 
+					while ( $the_query->have_posts() ) :
 						$the_query->the_post();
 						get_template_part('partials/person');
-					endwhile; 
-					wp_reset_postdata(); 
+					endwhile;
+					wp_reset_postdata();
 					?>
 				</div>
 			</div>
@@ -46,22 +46,22 @@
 		<div class="row mt6">
 			<div class="col-md-3 col-xl-3 col-sm-12">
 				<h3 class="white conference-heading">
-					Researchers and Staff				
+					Researchers and Staff
 				</h3>
 			</div>
 			<div class="col-md-9 col-xl-8 offset-xl-1 col-sm-12">
 				<div id="researchers-and-staff">
 					<?php
-					while ( $the_query->have_posts() ) : 
+					while ( $the_query->have_posts() ) :
 						$the_query->the_post();
-						get_template_part('partials/person');  
-						get_template_part('partials/person');  
-						get_template_part('partials/person');  
-						get_template_part('partials/person');  
-						get_template_part('partials/person');  						
-						get_template_part('partials/person');  						
+						get_template_part('partials/person');
+						get_template_part('partials/person');
+						get_template_part('partials/person');
+						get_template_part('partials/person');
+						get_template_part('partials/person');
+						get_template_part('partials/person');
 
-						get_template_part('partials/person'); ?> 
+						get_template_part('partials/person'); ?>
 
 					<?php endwhile; ?>
 
