@@ -55,15 +55,7 @@
 					while ( $the_query->have_posts() ) : 
 						$the_query->the_post();
 						get_template_part('partials/person');  
-						get_template_part('partials/person');  
-						get_template_part('partials/person');  
-						get_template_part('partials/person');  
-						get_template_part('partials/person');  						
-						get_template_part('partials/person');  						
-
-						get_template_part('partials/person'); ?> 
-
-					<?php endwhile; ?>
+					endwhile; ?>
 
 				</div>
 			</div>
