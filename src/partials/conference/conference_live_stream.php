@@ -10,7 +10,8 @@
 				</h3>
 			</div>
 			<div class="col-md-9 col-sm-12">
-				<?php the_field('conf_live_stream', $conference_id); ?>
+                <p class="white">Thank you for your interest in the conference. The event is over, but check back soon for videos of the sessions!</p>
+				<?php // the_field('conf_live_stream', $conference_id); ?>
 			</div>
 		</div>
 	</div>
