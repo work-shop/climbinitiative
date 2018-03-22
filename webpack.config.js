@@ -1,3 +1,5 @@
+'use strict';
+
 const path = require('path');
 const CleanWebpackPlugin = require('clean-webpack-plugin');
 const CopyWebpackPlugin = require('copy-webpack-plugin');
@@ -5,6 +7,8 @@ const ExtractTextPlugin = require('extract-text-webpack-plugin');
 const BrowserSyncPlugin = require('browser-sync-webpack-plugin');
 const FaviconsPlugin = require('favicons-webpack-plugin');
 const MinifyPlugin = require('babel-minify-webpack-plugin');
+const webpackHotMiddleware = require('webpack-hot-middleware');
+const webpackDevMiddleware = require('webpack-dev-middleware');
 const webpack = require('webpack');
 
 const paths = {
@@ -129,33 +133,60 @@ const image = {
         'window.jQuery': 'jquery',
         Popper: ['popper.js', 'default'],
     }),
-    new BrowserSyncPlugin({
-        proxy: 'localhost:8080',
-        port: 3000,
-        ui: {
-            port: 3001
+    new BrowserSyncPlugin(
+        {
+            proxy: 'localhost:8080',
+            port: 3000,
+            ui: {
+                port: 3001
+            },
+            files: [
+                {
+                    match: ['dist/**/*.php', 'dist/**/*.js'],
+                    fn: function( event ) {
+                        if ( event === 'change' ) {
+                            const bs = require('browser-sync').get('bs-webpack-plugin');
+                            bs.reload();
+                        }
+                    }
+                },
+                {
+                    match: ['dist/**/*.css'],
+                    fn: function( event ) {
+                        if ( event === 'change' ) {
+                            const bs = require('browser-sync').get('bs-webpack-plugin');
+                            bs.stream();
+                        }
+                    }
+                }
+            ],
+            injectChanges: true,
+            notify: true
+        },
+        {
+            reload: false
         }
-    }),
+    ),
     /** Uncomment this plugin, and update the "logo" key
     to generate properly-sized favicons from a source, hi-res file. */
-    new FaviconsPlugin({
-        logo: './images/favicon.png',
-        prefix: 'images/',
-        emitStates: false,
-        inject: false,
-        icons: {
-            android: false,
-            appleIcon: true,
-            appleStartup: false,
-            coast: false,
-            favicons: true,
-            firefox: true,
-            opengraph: false,
-            twitter: false,
-            yandex: false,
-            windows: false
-        }
-    }),
+    // new FaviconsPlugin({
+    //     logo: './images/favicon.png',
+    //     prefix: 'images/',
+    //     emitStates: false,
+    //     inject: false,
+    //     icons: {
+    //         android: false,
+    //         appleIcon: true,
+    //         appleStartup: false,
+    //         coast: false,
+    //         favicons: true,
+    //         firefox: true,
+    //         opengraph: false,
+    //         twitter: false,
+    //         yandex: false,
+    //         windows: false
+    //     }
+    // }),
     /** Uncomment this to minify code output */
     //new MinifyPlugin({}, {})
     ];
